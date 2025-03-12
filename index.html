@@ -16,6 +16,7 @@
         }
         img {
             max-width: 100%;
+            position: relative; /* Ensures image stays in flow */
         }
         .coming-soon {
             background-color: black;
@@ -23,6 +24,7 @@
             padding: 10px 20px;
             font-family: Arial, sans-serif;
             font-size: 24px;
+            position: relative; /* Keeps text in flow */
         }
         #canvas {
             position: absolute;
@@ -30,8 +32,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 1; /* Moves canvas over content */
+            pointer-events: none; /* Allows clicks to pass through to body */
         }
     </style>
 </head>
