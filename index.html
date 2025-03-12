@@ -23,7 +23,6 @@
             font-family: Arial, sans-serif; /* Clean font */
             font-size: 24px; /* Bigger text */
         }
-        /* Container for ripple effect */
         #ripple-container {
             position: absolute; /* Overlays the whole page */
             top: 0;
@@ -44,38 +43,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Initialize ripple effect on the container
-            $('#ripple-container').ripples({
-                resolution: 256, // Quality of ripples (lower = faster)
-                dropRadius: 20, // Size of click/tap ripple
-                perturbance: 0.02, // Wave distortion strength
-            });
-
-            // Desktop: Small ripple on mouse move
-            $('body').on('mousemove', function(e) {
-                if ($(window).width() > 768) { // Only on desktop
-                    $('#ripple-container').ripples('drop', e.pageX, e.pageY, 5, 0.01); // Small ripple
-                }
-            });
-
-            // Desktop: Bigger ripple on click
-            $('body').on('click', function(e) {
-                if ($(window).width() > 768) { // Only on desktop
-                    $('#ripple-container').ripples('drop', e.pageX, e.pageY, 20, 0.03); // Bigger ripple
-                }
-            });
-
-            // Mobile: Small ripple on touch move
-            $('body').on('touchmove', function(e) {
-                var touch = e.originalEvent.touches[0];
-                $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 5, 0.01); // Small ripple
-            });
-
-            // Mobile: Bigger ripple on tap
-            $('body').on('touchstart', function(e) {
-                var touch = e.originalEvent.touches[0];
-                $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 20, 0.03); // Bigger ripple
-            });
+            alert("Ripples are ready!"); // Debug: Confirm script runs
+            if ($('#ripple-container').length) {
+                alert("Container found!"); // Debug: Confirm container exists
+                $('#ripple-container').ripples({
+                    resolution: 256, // Quality of ripples
+                    dropRadius: 20, // Size of click/tap ripple
+                    perturbance: 0.02, // Wave distortion strength
+                });
+                $('body').on('mousemove', function(e) {
+                    if ($(window).width() > 768) { // Desktop: Small ripple
+                        $('#ripple-container').ripples('drop', e.pageX, e.pageY, 5, 0.01);
+                    }
+                });
+                $('body').on('click', function(e) {
+                    if ($(window).width() > 768) { // Desktop: Bigger ripple
+                        $('#ripple-container').ripples('drop', e.pageX, e.pageY, 20, 0.03);
+                    }
+                });
+                $('body').on('touchmove', function(e) {
+                    var touch = e.originalEvent.touches[0];
+                    $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 5, 0.01); // Mobile: Small ripple
+                });
+                $('body').on('touchstart', function(e) {
+                    var touch = e.originalEvent.touches[0];
+                    $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 20, 0.03); // Mobile: Bigger ripple
+                });
+            } else {
+                alert("Container not found!"); // Debug: Alert if container missing
+            }
         });
     </script>
 </body>
