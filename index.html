@@ -1,31 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Landing Page</title>
+    <title>Mysterious Water</title>
     <style>
         body {
-            background-color: white; /* White background for the whole page */
-            margin: 0; /* Removes default spacing */
-            height: 100vh; /* Full height of the screen */
-            display: flex; /* Centers everything vertically and horizontally */
-            flex-direction: column; /* Stacks image and text vertically */
-            justify-content: center; /* Centers vertically */
-            align-items: center; /* Centers horizontally */
+            background-color: white; /* White background */
+            margin: 0; /* No default spacing */
+            height: 100vh; /* Full screen height */
+            display: flex; /* Center content */
+            flex-direction: column; /* Stack vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            overflow: hidden; /* Prevents ripple overflow */
         }
         img {
-            max-width: 100%; /* Keeps image from overflowing */
+            max-width: 100%; /* Keeps image responsive */
         }
         .coming-soon {
             background-color: black; /* Black background for text */
             color: white; /* White text */
-            padding: 10px 20px; /* Some space around the text */
-            font-family: Arial, sans-serif; /* Simple, clean font */
+            padding: 10px 20px; /* Spacing around text */
+            font-family: Arial, sans-serif; /* Clean font */
             font-size: 24px; /* Bigger text */
+        }
+        /* Container for ripple effect */
+        #ripple-container {
+            position: absolute; /* Overlays the whole page */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind content */
         }
     </style>
 </head>
 <body>
+    <div id="ripple-container"></div> <!-- Ripple layer -->
     <img src="MWLOGO.png" alt="MW Logo">
     <div class="coming-soon">Coming soon.</div>
+
+    <!-- Add jQuery and Ripples.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize ripple effect on the container
+            $('#ripple-container').ripples({
+                resolution: 256, // Quality of ripples (lower = faster)
+                dropRadius: 20, // Size of click/tap ripple
+                perturbance: 0.02, // Wave distortion strength
+            });
+
+            // Desktop: Small ripple on mouse move
+            $('body').on('mousemove', function(e) {
+                if ($(window).width() > 768) { // Only on desktop
+                    $('#ripple-container').ripples('drop', e.pageX, e.pageY, 5, 0.01); // Small ripple
+                }
+            });
+
+            // Desktop: Bigger ripple on click
+            $('body').on('click', function(e) {
+                if ($(window).width() > 768) { // Only on desktop
+                    $('#ripple-container').ripples('drop', e.pageX, e.pageY, 20, 0.03); // Bigger ripple
+                }
+            });
+
+            // Mobile: Small ripple on touch move
+            $('body').on('touchmove', function(e) {
+                var touch = e.originalEvent.touches[0];
+                $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 5, 0.01); // Small ripple
+            });
+
+            // Mobile: Bigger ripple on tap
+            $('body').on('touchstart', function(e) {
+                var touch = e.originalEvent.touches[0];
+                $('#ripple-container').ripples('drop', touch.pageX, touch.pageY, 20, 0.03); // Bigger ripple
+            });
+        });
+    </script>
 </body>
 </html>
