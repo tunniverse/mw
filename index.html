@@ -16,7 +16,8 @@
         }
         img {
             max-width: 100%;
-            position: relative; /* Ensures image stays in flow */
+            position: relative;
+            z-index: 0; /* Ensure image is below text and canvas */
         }
         .coming-soon {
             background-color: black;
@@ -24,7 +25,9 @@
             padding: 10px 20px;
             font-family: Arial, sans-serif;
             font-size: 24px;
-            position: relative; /* Keeps text in flow */
+            position: relative;
+            top: -100px; /* Move text up 100px to overlap image */
+            z-index: 1; /* Ensure text is above image but below canvas */
         }
         #canvas {
             position: absolute;
@@ -32,8 +35,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Moves canvas over content */
-            pointer-events: none; /* Allows clicks to pass through to body */
+            z-index: 2; /* Canvas over both image and text */
+            pointer-events: none;
         }
     </style>
 </head>
@@ -43,11 +46,9 @@
     <div class="coming-soon">Coming soon.</div>
 
     <script>
-        // Canvas setup
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
 
-        // Resize canvas to fit window
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -55,7 +56,6 @@
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Ripple array and animation
         let ripples = [];
         function addRipple(x, y, maxRadius) {
             ripples.push({ x: x, y: y, radius: 0, maxRadius: maxRadius, alpha: 0.6 });
@@ -67,11 +67,11 @@
                 let ripple = ripples[i];
                 ctx.beginPath();
                 ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(0, 150, 255, ${ripple.alpha})`; // Light blue ripple
+                ctx.strokeStyle = `rgba(0, 150, 255, ${ripple.alpha})`;
                 ctx.lineWidth = 2;
                 ctx.stroke();
-                ripple.radius += 1.5; // Expand speed
-                ripple.alpha -= 0.02; // Fade out
+                ripple.radius += 1.5;
+                ripple.alpha -= 0.02;
                 if (ripple.alpha <= 0 || ripple.radius > ripple.maxRadius) {
                     ripples.splice(i, 1);
                     i--;
@@ -81,29 +81,27 @@
         }
         animateRipples();
 
-        // Desktop events
         document.body.addEventListener('mousemove', function(e) {
-            if (window.innerWidth > 768) { // Desktop only
-                addRipple(e.clientX, e.clientY, 30); // Small ripple
+            if (window.innerWidth > 768) {
+                addRipple(e.clientX, e.clientY, 30);
             }
         });
 
         document.body.addEventListener('click', function(e) {
             if (window.innerWidth > 768) {
-                addRipple(e.clientX, e.clientY, 60); // Bigger ripple
+                addRipple(e.clientX, e.clientY, 60);
             }
         });
 
-        // Mobile events
         document.body.addEventListener('touchmove', function(e) {
-            e.preventDefault(); // Prevent scrolling while dragging
+            e.preventDefault();
             const touch = e.touches[0];
-            addRipple(touch.clientX, touch.clientY, 30); // Small ripple
+            addRipple(touch.clientX, touch.clientY, 30);
         }, { passive: false });
 
         document.body.addEventListener('touchstart', function(e) {
             const touch = e.touches[0];
-            addRipple(touch.clientX, touch.clientY, 60); // Bigger ripple
+            addRipple(touch.clientX, touch.clientY, 60);
         }, { passive: true });
     </script>
 </body>
