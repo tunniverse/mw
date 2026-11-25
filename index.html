@@ -153,10 +153,33 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .back:hover{color:var(--gold-text)}
 .go{font-size:13px;background:var(--navy);color:var(--white);border:0;padding:16px 32px;cursor:pointer;transition:background-color .25s}
 .go:hover{background:#22344D}
-.done{align-items:center}
-.done p{font-size:16px;line-height:1.7;color:var(--body);margin:0;text-align:center}
-.done .follow-line{font-size:11px;color:var(--muted)}
-.done .follow-line a{color:var(--gold-text)}
+/* after sending: the frame becomes a short, calm receipt */
+.frame.sent > .eyebrow,.frame.sent > h2,.frame.sent > .progress,.frame.sent > .fine,.frame.sent > .note{display:none}
+.done{align-items:center;justify-content:center;gap:0;text-align:center;padding-block:6px}
+.done .kicker{font-size:11px;color:var(--gold-text);margin:22px 0 12px}
+.done .title{font-size:clamp(34px,3.8vw,46px);line-height:1.08;margin:0;text-wrap:balance}
+.done .title:focus{outline:none}
+.done .lede{font-size:16px;line-height:1.7;color:var(--body);margin:16px auto 0;max-width:38ch;text-wrap:pretty}
+.receipt{width:100%;max-width:420px;margin:30px auto 0;padding:0;border-top:1px solid var(--hair-ivory);text-align:left}
+.receipt div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:16px;align-items:baseline;padding:13px 2px;border-bottom:1px solid var(--hair-ivory)}
+.receipt dt{font-size:10.5px;color:var(--gold-text)}
+.receipt dd{margin:0;font-size:15px;line-height:1.45;color:var(--ink);overflow-wrap:anywhere}
+.receipt dd span{color:var(--muted);margin-right:.7em}
+.wait{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:34px}
+.wait > .cp{font-size:10.5px;color:var(--muted)}
+.wait .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.wait a{display:inline-flex;align-items:center;gap:9px;padding:10px 20px 10px 16px;border:1px solid var(--gold);border-radius:999px;background:var(--white);font-size:14px;color:var(--ink);transition:background-color .25s,transform .25s}
+.wait a:hover{background:var(--gold-light);color:var(--ink);transform:translateY(-1px)}
+.wait svg{width:16px;height:16px;flex:none}
+.done #again{margin-top:22px}
+/* the receipt settles in after the tick has drawn */
+.done .kicker,.done .title,.done .lede,.receipt div,.wait{opacity:0;transform:translateY(10px)}
+.done.on .kicker,.done.on .title,.done.on .lede,.done.on .receipt div,.done.on .wait{animation:settle .7s cubic-bezier(.2,.7,.2,1) forwards}
+.done.on .kicker{animation-delay:.55s}.done.on .title{animation-delay:.65s}.done.on .lede{animation-delay:.8s}
+.done.on .receipt div:nth-child(1){animation-delay:1s}.done.on .receipt div:nth-child(2){animation-delay:1.08s}.done.on .receipt div:nth-child(3){animation-delay:1.16s}
+.done.on .wait{animation-delay:1.3s}
+@keyframes settle{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.done .kicker,.done .title,.done .lede,.receipt div,.wait{opacity:1;transform:none;animation:none!important}}
 .tick svg{width:44px;height:44px;display:block;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 .tick circle{stroke-dasharray:117;stroke-dashoffset:117}
 .tick path{stroke-dasharray:24;stroke-dashoffset:24}
@@ -315,10 +338,18 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
         </div>
         <div class="step done" data-step="2">
           <span class="tick" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.5"/><path d="M12.5 20.5l5 5 10-11"/></svg></span>
-          <p class="q" id="doneTitle">Thank you.</p>
-          <p id="doneText"></p>
-          <p class="cp follow-line">Meanwhile · <a href="https://instagram.com/thetunniverse" target="_blank" rel="noopener">Instagram</a> · <a href="https://x.com/thetunniverse" target="_blank" rel="noopener">X</a></p>
-          <div class="stepnav" style="justify-content:center"><button type="button" class="cp back" id="again">Send another message</button></div>
+          <p class="cp kicker">Message received</p>
+          <h3 class="serif title" id="doneTitle" tabindex="-1">Thank you.</h3>
+          <p class="lede" id="doneText"></p>
+          <dl class="receipt" id="receipt"></dl>
+          <div class="wait">
+            <span class="cp">While you wait</span>
+            <div class="links">
+              <a href="https://instagram.com/thetunniverse" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+              <a href="https://x.com/thetunniverse" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>X</a>
+            </div>
+          </div>
+          <button type="button" class="cp back" id="again">Send another message</button>
         </div>
       </form>
       <p class="note" id="note" role="status"></p>
@@ -430,18 +461,40 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
     const body = new URLSearchParams(new FormData(form)).toString();
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
       .then(r => { if (!r.ok) throw new Error(r.status); })
-      .then(() => {
-        $('#doneTitle').textContent = 'Thank you, ' + name.split(/\s+/)[0] + '.';
-        $('#doneText').textContent = `I'll reply soon ${chat ? 'on ' + app() + ', ' + chat : 'at ' + email}${social ? ', and look out for you on ' + net() : ''}.`;
-        show(2);
-      })
+      .then(() => sent({ name, email, chat, social, app: app(), net: net(), topic: $('#c-topic').value }))
       .catch(() => {
         note.textContent = 'The message did not go through. Please try again, or message me on Instagram @thetunniverse.';
         note.classList.add('err');
       })
       .finally(() => { btn.disabled = false; btn.textContent = 'Send'; });
   });
+  // Thai numbers read better grouped: +66 81 234 5678
+  const fmtPhone = v => {
+    const m = v.replace(/[\s().-]/g, '').match(/^(?:\+66|0066|0)(\d{1,2})(\d{3})(\d{4})$/);
+    return m ? `+66 ${m[1]} ${m[2]} ${m[3]}` : v;
+  };
+  const fmtHandle = (v, n) => n !== 'Facebook' && /^[\w.]+$/.test(v) ? '@' + v : v;
+  const topicText = t => ((choices.find(c => c.dataset.topic === t) || {}).textContent || '').replace(/^[A-D]/, '');
+  function row(label, value, extra) {
+    const d = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+    dt.className = 'cp'; dt.textContent = label; dd.textContent = value;
+    if (extra) { const sp = document.createElement('span'); sp.textContent = extra; dd.prepend(sp); }
+    d.append(dt, dd); return d;
+  }
+  function sent(v) {
+    const first = v.name.split(/\s+/)[0];
+    $('#doneTitle').textContent = `Thank you, ${first}.`;
+    $('#doneText').textContent = `I read every message myself and will reply soon ${v.chat ? 'on ' + v.app : 'by email'}${v.social ? ', and look out for you on ' + v.net : ''}.`;
+    const r = $('#receipt'); r.replaceChildren();
+    if (v.topic) r.append(row('About', topicText(v.topic)));
+    r.append(v.chat ? row('Reply on', fmtPhone(v.chat), v.app) : row('Reply to', v.email, 'Email'));
+    if (v.social) r.append(row('Social', fmtHandle(v.social.replace(/^@/, ''), v.net), v.net));
+    frame.classList.add('sent');
+    show(2, false);
+    setTimeout(() => $('#doneTitle').focus({ preventScroll: true }), 700);
+  }
   $('#again').addEventListener('click', () => {
+    frame.classList.remove('sent');
     form.reset(); $('#c-topic').value = ''; syncSocial(); syncApp();
     $('#c-msg').placeholder = hints.Other;
     choices.forEach(c => c.setAttribute('aria-pressed', 'false'));
@@ -541,6 +594,9 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   if (reduce) { joints.forEach(j => apply(j, 1)); }
   else { for (const [el, t] of targets()) { shown.set(el, t); apply(el, t); } }
   onScroll();
+  // see the thank-you screen without sending: /?sent=preview#contact
+  if (new URLSearchParams(location.search).get('sent') === 'preview')
+    sent({ name: 'Tunyalit', email: 'name@example.com', chat: '+66812345678', social: 'yourhandle', app: 'WhatsApp', net: 'X', topic: 'Property owner' });
 })();
 </script>
 </body>
