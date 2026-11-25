@@ -69,8 +69,10 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .biz .mark{width:40px;height:1px;background:var(--gold-navy);align-self:center}
 .biz .cp{font-size:12px;color:var(--gold-navy)}
 .biz h3{font-size:clamp(40px,4.2vw,58px);line-height:1.02;margin:0;text-wrap:balance}
-.biz .copy{display:flex;flex-direction:column;gap:16px;max-width:40ch;justify-self:center}
-.biz p{font-size:17px;line-height:1.75;margin:0;color:var(--navy-text)}
+/* reading text: left-aligned for an even line start, about 50 characters a line, a serif lead sentence, then the detail */
+.biz .copy{display:flex;flex-direction:column;gap:20px;width:100%;max-width:28rem;justify-self:center;text-align:left;margin-top:10px}
+.biz p{font-size:16.5px;line-height:1.8;letter-spacing:.005em;margin:0;color:#D5D9E0;text-wrap:pretty}
+.biz p:first-child{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(21px,1.9vw,23px);line-height:1.45;letter-spacing:0;color:var(--navy-ink)}
 /* side by side, the two columns share rows so both paragraphs start on the same line */
 @supports (grid-template-rows:subgrid){@media (min-width:861px){.biz{display:grid;grid-template-rows:subgrid;grid-row:span 4;justify-items:center;align-items:start}}}
 
