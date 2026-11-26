@@ -270,6 +270,15 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
 
 footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--hair)}footer .priv:hover{color:var(--gold-text)}
 .frame .fine a{color:var(--gold-text);border-bottom:1px solid var(--gold);white-space:nowrap}
+/* optional news consent: unticked by default, a quiet custom box */
+.consent{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:1.55;color:var(--body);text-align:left;margin-top:-2px}
+.consent input{position:absolute;opacity:0;width:1px;height:1px}
+.consent .box{flex:none;width:18px;height:18px;margin-top:1px;border:1px solid var(--line,#DDD6C8);border-radius:5px;background:var(--white);display:grid;place-items:center;transition:background-color .2s,border-color .2s}
+.consent .box::after{content:"";width:9px;height:5px;border:solid var(--white);border-width:0 0 2px 2px;transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.consent input:checked + .box{background:var(--navy);border-color:var(--navy)}
+.consent input:checked + .box::after{opacity:1}
+.consent input:focus-visible + .box{outline:2px solid var(--gold-text);outline-offset:2px}
+.consent:hover .box{border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -385,6 +394,7 @@ footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--h
             </div>
             <div class="field wide"><label class="cp" for="c-msg">Message <em>optional</em></label><textarea id="c-msg" name="message" placeholder="Anything we should know before we talk?"></textarea></div>
           </div>
+          <label class="consent" for="c-news"><input type="checkbox" id="c-news" name="news" value="Yes"><span class="box" aria-hidden="true"></span><span>Email me occasional news, such as new letters and properties. Unsubscribe any time.</span></label>
           <input class="hp" id="c-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="stepnav"><button type="button" class="back" data-back>← Back</button><span class="right"><span class="shortcut mono" id="shortcut" hidden>or <kbd>Ctrl</kbd> <kbd>Enter</kbd></span><button type="submit" class="go" id="sendBtn">Send</button></span></div>
         </div>
@@ -405,7 +415,7 @@ footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--h
         </div>
       </form>
       <p class="note" id="note" role="status"></p>
-      <p class="fine">Your details are used only to reply to you. We never sell them, and we delete them whenever you ask. <a href="/privacy/">Privacy notice</a></p>
+      <p class="fine">We use your details to reply to you, and to send news only if you ask for it. We never sell them. <a href="/privacy/">Privacy notice</a></p>
     </div>
   </div>
 </section>
@@ -608,7 +618,7 @@ footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--h
     const body = new URLSearchParams(new FormData(form)).toString();
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
       .then(r => { if (!r.ok) throw new Error(r.status); })
-      .then(() => sent({ name, email, chat, social, app: app(), net: net(), topic: $('#c-topic').value }))
+      .then(() => sent({ name, email, chat, social, app: app(), net: net(), topic: $('#c-topic').value, news: $('#c-news').checked }))
       .catch(() => {
         note.textContent = 'The message did not go through. Please try again, or message us on Instagram @thetunniverse.';
         note.classList.add('err');
@@ -637,6 +647,7 @@ footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--h
     if (v.topic) r.append(row('About', topicText(v.topic)));
     r.append(v.chat ? row('Reply on', fmtPhone(v.chat), v.app) : row('Reply to', v.email, 'Email'));
     if (v.social) r.append(row('Social', fmtHandle(v.social.replace(/^@/, ''), v.net), v.net));
+    if (v.news) r.append(row('News', 'Occasional updates', 'Email'));
     frame.classList.add('sent');
     show(2, false);
     setTimeout(() => $('#doneTitle').focus({ preventScroll: true }), 700);
