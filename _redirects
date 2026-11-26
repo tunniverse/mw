@@ -1,0 +1,10 @@
+# Netlify redirects. Short or guessed addresses go somewhere useful.
+/letters        /#letter        302
+/letters/       /#letter        302
+/letter         /#letter        302
+/letter/        /#letter        302
+/the-letter     /#letter        302
+/contact        /#contact       302
+/privacy-policy /privacy/       301
+# browsers and crawlers ask for /favicon.ico; serve the PNG icon there
+/favicon.ico    /favicon.png    200
