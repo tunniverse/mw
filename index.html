@@ -223,7 +223,7 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
 <section id="top" class="hero">
   <header class="wrap">
     <span class="cp">Phuket · Thailand</span>
-    <nav class="cp"><a href="#work">What we do</a><a href="#letter">The Letter</a><a href="#contact">Contact</a></nav>
+    <nav class="cp"><a href="#work">What we do</a><a href="/about/">About</a><a href="#letter">The Letter</a><a href="#contact">Contact</a></nav>
   </header>
   <img class="logo" id="logo" src="/mw-logo-spaced.png" width="1200" height="392" alt="Mysterious Water">
   <h1 class="cp caption" id="caption">Quiet money moves like water</h1>
@@ -304,7 +304,7 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
             <button type="button" class="choice" data-key="a" data-topic="Property owner" aria-pressed="false"><b>A</b>I own a property</button>
             <button type="button" class="choice" data-key="b" data-topic="Rent or buy" aria-pressed="false"><b>B</b>I'm looking to rent or buy</button>
             <button type="button" class="choice" data-key="c" data-topic="Trading and AI" aria-pressed="false"><b>C</b>Trading and AI agents</button>
-            <button type="button" class="choice" data-key="d" data-topic="Other" aria-pressed="false"><b>D</b>Something else</button>
+            <button type="button" class="choice" data-key="d" data-topic="Proposal or press" aria-pressed="false"><b>D</b>A proposal, press or other</button>
           </div>
         </div>
         <div class="step" data-step="1">
@@ -385,6 +385,7 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
     'Property owner': 'Where is the property, and are you looking to rent it out or sell?',
     'Rent or buy': 'What are you looking for, and from when?',
     'Trading and AI': 'What would you like to talk about?',
+    'Proposal or press': 'What would you like to propose?',
     'Other': 'Anything we should know before we talk?'
   };
   const socialHints = { Instagram: '@yourhandle', X: '@yourhandle', Facebook: 'Profile name or link' };
@@ -596,6 +597,8 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   if (reduce) { joints.forEach(j => apply(j, 1)); }
   else { for (const [el, t] of targets()) { shown.set(el, t); apply(el, t); } }
   onScroll();
+  // links like /?topic=proposal#contact (from the About page) open the form on that topic
+  if (new URLSearchParams(location.search).get('topic') === 'proposal') choices.find(c => c.dataset.key === 'd').click();
   // see the thank-you screen without sending: /?sent=preview#contact
   if (new URLSearchParams(location.search).get('sent') === 'preview')
     sent({ name: 'Tunyalit', email: 'name@example.com', chat: '+66812345678', social: 'yourhandle', app: 'WhatsApp', net: 'X', topic: 'Property owner' });
