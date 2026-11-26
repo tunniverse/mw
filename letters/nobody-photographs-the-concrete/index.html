@@ -62,8 +62,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-text);outline-
 .brand{display:inline-flex;align-items:center;gap:14px}
 .brand .mw-mark{display:block;height:32px;width:auto}
 .brand .word{display:block;width:min(250px,52vw);height:auto}
-.top nav{display:flex;flex-wrap:wrap;gap:8px 30px;font-size:12.5px}
-.top nav a:hover,.top nav a[aria-current]{color:var(--gold-text)}
 
 /* ---------- cover: a sharp navy section with the water field ---------- */
 .cover{position:relative;background:radial-gradient(ellipse 90% 70% at 50% 0%,#22364F 0%,rgba(34,54,79,0) 70%),var(--navy);color:var(--navy-ink);padding-block:clamp(72px,11vh,128px) clamp(64px,9vh,104px)}
@@ -211,18 +209,66 @@ footer .cp{font-size:12px;color:var(--muted)}
 .follow svg{width:18px;height:18px;display:block}
 
 @media (max-width:1180px){.layout{grid-template-columns:minmax(0,1fr)}.article{grid-column:1;max-width:var(--col);margin:0 auto;width:100%}.toc{display:none}}
-@media (max-width:600px){.article p{font-size:17.5px}.article p.first{font-size:19px}.article ul li,.signals li{font-size:17px}.mood li{grid-template-columns:4.6em minmax(0,1fr);gap:12px}.mood .fig{font-size:16px}.top nav{gap:8px 20px}.next{padding:20px}}
+@media (max-width:600px){.article p{font-size:17.5px}.article p.first{font-size:19px}.article ul li,.signals li{font-size:17px}.mood li{grid-template-columns:4.6em minmax(0,1fr);gap:12px}.mood .fig{font-size:16px}.next{padding:20px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--hair)}footer .priv:hover{color:var(--gold-text)}
+/* ---------- Main menu: a floating capsule, white over white, navy over navy ---------- */
+header.mhead{padding-block:18px;min-height:42px}
+.mnav{position:fixed;z-index:30;top:calc(18px + env(safe-area-inset-top,0px));right:calc(max(0px,(100vw - 1200px) / 2) + max(var(--pad,max(24px,5vw)),env(safe-area-inset-right,0px)));display:flex;align-items:center;gap:2px;padding:4px;border:1px solid var(--hair);border-radius:999px;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 8px 24px rgba(24,38,58,.06);font-size:12px;transition:background-color .4s ease,border-color .4s ease,box-shadow .4s ease}
+.mnav a{padding:10px calc(17px - .18em) 10px 17px;border-radius:999px;color:var(--ink);line-height:1;-webkit-tap-highlight-color:transparent;transition:color .4s ease,background-color .2s,transform .12s}
+.mnav .s{display:none}
+.mnav a:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}
+.mnav a:focus-visible,.mnav a[aria-current="page"]{background:var(--navy);color:var(--white)}
+@media (hover:hover){.mnav a:hover{background:var(--navy);color:var(--white)}}
+.mnav a:active{background:#0F1A29;color:var(--white);transform:scale(.97)}
+.scrolled .mnav{background:rgba(255,255,255,.72);box-shadow:none}
+html.nav-dark .mnav{background:rgba(24,38,58,.55);border-color:rgba(217,196,154,.24);box-shadow:none}
+html.nav-dark .mnav a{color:var(--navy-ink)}
+html.nav-dark .mnav a:focus-visible,html.nav-dark .mnav a[aria-current="page"]{background:var(--navy-ink);color:var(--navy);outline-color:var(--gold-navy)}
+@media (hover:hover){html.nav-dark .mnav a:hover{background:var(--navy-ink);color:var(--navy)}}
+html.nav-dark .mnav a:active{background:var(--white);color:var(--navy)}
+/* first visit on the home page: the capsule settles in, then the links arrive left to right, once */
+.mnav.in{animation:navCap .7s cubic-bezier(.2,.7,.2,1) .35s both}
+.mnav.in a{animation:navLink .55s cubic-bezier(.2,.7,.2,1) both}
+.mnav.in a:nth-child(1){animation-delay:.6s}.mnav.in a:nth-child(2){animation-delay:.7s}.mnav.in a:nth-child(3){animation-delay:.8s}.mnav.in a:nth-child(4){animation-delay:.9s}
+@keyframes navCap{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes navLink{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mnav.in,.mnav.in a{animation:none}}
+/* tablets and phones: the menu floats centred at the very top, the header sits just below it */
+@media (max-width:900px){
+  .mnav{top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;margin-inline:auto;width:max-content;max-width:calc(100% - 32px)}
+  header.mhead{padding-top:78px;justify-content:center}
+}
+@media (max-width:560px){
+  .mnav .l{display:none}.mnav .s{display:inline}
+  .mnav{width:auto;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));justify-content:space-between;font-size:11px}
+  .mnav a{flex:auto;text-align:center;padding:10px calc(10px - .18em) 10px 10px}
+}
+
+/* follow pill: the same glass as the menu, white over white, navy over navy */
+html .follow{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-color:var(--hair);box-shadow:none;
+  transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s linear .5s,background-color .4s ease,border-color .4s ease}
+html .follow.show{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s,background-color .4s ease,border-color .4s ease}
+html .follow .cp{transition:color .4s ease}
+html .follow .ico{-webkit-tap-highlight-color:transparent;transition:color .2s,background-color .2s,transform .12s}
+html .follow .ico:focus-visible{background:var(--navy);color:var(--white)}
+@media (hover:hover){html .follow .ico:hover{background:var(--navy);color:var(--white)}}
+html .follow .ico:active{background:#0F1A29;color:var(--white);transform:scale(.94)}
+html.follow-dark .follow{background:rgba(24,38,58,.55);border-color:rgba(217,196,154,.24)}
+html.follow-dark .follow .cp{color:var(--gold-navy)}
+html.follow-dark .follow .ico{color:var(--navy-ink)}
+html.follow-dark .follow .ico:focus-visible{background:var(--navy-ink);color:var(--navy)}
+@media (hover:hover){html.follow-dark .follow .ico:hover{background:var(--navy-ink);color:var(--navy)}}
+html.follow-dark .follow .ico:active{background:var(--white);color:var(--navy)}
 </style>
 </head>
 <body>
 
 <span class="progress" id="progress" aria-hidden="true"></span>
 
-<header class="top wrap">
+<header class="top wrap mhead">
   <a class="brand" href="/" aria-label="Mysterious Water, home"><img class="mw-mark" src="/mw-monogram.png" alt="" width="160" height="198"><img class="word" src="/mw-wordmark-spaced.png" alt="Mysterious Water" width="1200" height="101"></a>
-  <nav class="cp" aria-label="Main"><a href="/#work">What we do</a><a href="/about/">About</a><a href="/#letter" aria-current="page">The Letter</a><a href="/#contact">Contact</a></nav>
+  <nav class="cp mnav" aria-label="Main"><a href="/#work"><span class="l">What we do</span><span class="s">Work</span></a><a href="/about/">About</a><a href="/#letter" aria-current="page"><span class="l">The Letter</span><span class="s">Letter</span></a><a href="/#contact">Contact</a></nav>
 </header>
 
 <section class="cover navy-grid" aria-labelledby="title">
@@ -615,6 +661,24 @@ footer .priv{font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--h
   const figs = [...document.querySelectorAll('figure.chart')];
   figs.forEach(f => { render(f); if ('ResizeObserver' in window) new ResizeObserver(() => render(f)).observe(f.querySelector('.plot')); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => figs.forEach(render));
+})();
+</script>
+<script>
+/* floating menu and follow pill: each takes the navy look while a navy band is under it */
+(() => {
+  const r = document.documentElement, nav = document.querySelector('.mnav'), follow = document.getElementById('follow'), dark = [...document.querySelectorAll('.navy-grid')];
+  if (!nav) return;
+  const over = el => { if (!el) return false; const b = el.getBoundingClientRect(), y = b.top + b.height / 2;
+    return dark.some(s => { const q = s.getBoundingClientRect(); return q.top <= y && q.bottom >= y; }); };
+  let ticking = false;
+  function check() {
+    ticking = false;
+    r.classList.toggle('scrolled', scrollY > 8);
+    r.classList.toggle('nav-dark', over(nav));
+    r.classList.toggle('follow-dark', over(follow));
+  }
+  const ask = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
+  addEventListener('scroll', ask, { passive: true }); addEventListener('resize', ask); check();
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "afcf1cb15b1d4ae3a1906087d3c7663a"}'></script><!-- End Cloudflare Web Analytics -->
