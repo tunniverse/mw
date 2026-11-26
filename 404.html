@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Mysterious Water</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&family=Manrope:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* A plain reading page in the site's system: sharp sections, one 680px column, Cormorant SC headings, Manrope text, mono facts. */
+:root{--white:#FFFFFF;--ink:#121212;--navy:#18263A;--ivory:#F8F5EF;--mist:#FBF8F2;--gold:#C9B48A;--gold-text:#7D6A45;--body:#3F3C37;--muted:#6F675C;--hair:#E8E3D8;
+  --sc:'Cormorant SC',Georgia,serif;--sans:Manrope,'Helvetica Neue',Arial,sans-serif;--mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--pad:max(20px,5vw)}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
+.cp{font-family:Copperplate,'Copperplate Gothic Light','Copperplate Gothic','Copperplate Gothic Std',var(--sc);text-transform:uppercase;letter-spacing:.18em;font-weight:400}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;padding-block:24px}
+.brand{display:inline-flex;align-items:center;gap:14px}
+.brand .mw-mark{display:block;height:32px;width:auto}
+.brand .word{display:block;width:min(250px,52vw);height:auto}
+.top nav{display:flex;flex-wrap:wrap;gap:8px 30px;font-size:12.5px}
+.top nav a:hover{color:var(--gold-text)}
+.doc{max-width:680px;margin:0 auto;padding-block:clamp(48px,8vh,96px) clamp(64px,10vh,120px);border-top:1px solid var(--hair)}
+.doc .meta{color:var(--muted)}
+.doc h1{font-family:var(--sc);font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(36px,4.4vw,54px);line-height:1.05;margin:16px 0 0}
+.doc .lede{font-size:19px;line-height:1.7;color:var(--ink);margin:26px 0 0}
+.doc h2{font-family:var(--sc);font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(22px,2.2vw,27px);line-height:1.15;margin:52px 0 14px}
+.doc h2 .mono{color:var(--gold-text);font-size:11px;margin-right:12px;vertical-align:.25em;letter-spacing:.04em}
+.doc p,.doc li{font-size:17px;line-height:1.75;color:var(--body)}
+.doc p{margin:0 0 16px}
+.doc ul{margin:0 0 18px;padding:0;list-style:none}
+.doc li{position:relative;padding-left:24px;margin-bottom:8px}
+.doc li::before{content:"";position:absolute;left:2px;top:.85em;width:11px;height:1px;background:var(--gold)}
+.doc strong{font-weight:600;color:var(--ink)}
+.doc a.in{color:var(--ink);border-bottom:1px solid var(--gold)}
+.doc a.in:hover{color:var(--gold-text)}
+.doc a.ext{color:var(--ink);border-bottom:1px solid var(--gold)}
+.doc a.ext::after{content:"↗";font-family:var(--mono);font-size:.7em;color:var(--gold-text);margin-left:2px;vertical-align:.25em}
+.facts{border:1px solid var(--hair);border-radius:14px;overflow:hidden;margin:6px 0 20px}
+.facts div{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:16px;padding:13px 18px;border-top:1px solid var(--hair);font-size:15.5px;line-height:1.6;color:var(--body)}
+.facts div:first-child{border-top:0}
+.facts dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);padding-top:.3em}
+.facts dd{margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:8px;font-size:14.5px;font-weight:600;background:var(--navy);color:var(--white);padding:13px 20px;border-radius:8px}
+.btn::after{content:"→"}
+footer{padding-block:40px 48px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;border-top:1px solid var(--hair)}
+footer .cp{font-size:12px;color:var(--muted)}
+@media (max-width:600px){.facts div{grid-template-columns:minmax(0,1fr);gap:4px}.top nav{gap:8px 20px}}
+.lost{max-width:680px;margin:0 auto;padding-block:clamp(64px,12vh,140px);border-top:1px solid var(--hair);text-align:center}
+.lost .code{font-family:var(--mono);font-size:12px;color:var(--gold-text);letter-spacing:.14em}
+.lost h1{font-family:var(--sc);font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(34px,4.4vw,52px);line-height:1.08;margin:18px 0 0;text-wrap:balance}
+.lost p{font-size:17.5px;line-height:1.7;color:var(--body);margin:18px auto 0;max-width:30em}
+.ways{display:flex;flex-direction:column;max-width:440px;margin:36px auto 0;border:1px solid var(--hair);border-radius:14px;overflow:hidden;text-align:left}
+.ways a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:15px 18px;border-top:1px solid var(--hair);font-size:15.5px;transition:background-color .2s}
+.ways a:first-child{border-top:0}
+.ways a span{color:var(--muted);font-family:var(--mono);font-size:11px}
+.ways a::after{content:"→";color:var(--gold-text);grid-column:2;grid-row:1}
+.ways a:hover{background:var(--mist)}
+.ways a b{font-weight:500}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="/" aria-label="Mysterious Water, home"><img class="mw-mark" src="/mw-monogram.png" alt="" width="160" height="198"><img class="word" src="/mw-wordmark-spaced.png" alt="Mysterious Water" width="1200" height="101"></a>
+  <nav class="cp" aria-label="Main"><a href="/#work">What we do</a><a href="/about/">About</a><a href="/#letter">The Letter</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main class="wrap">
+  <section class="lost">
+    <span class="code">404 · Page not found</span>
+    <h1>This page has moved, or never existed.</h1>
+    <p>The link may be old or mistyped. These will take you somewhere useful:</p>
+    <nav class="ways" aria-label="Where to go">
+      <a href="/"><b>Home</b></a>
+      <a href="/about/"><b>About Tunyalit Karnjanakul</b></a>
+      <a href="/letters/nobody-photographs-the-concrete/"><b>Letter No. 1</b></a>
+      <a href="/#contact"><b>Contact</b></a>
+    </nav>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span class="cp">© 2026 Mysterious Water · Phuket</span>
+</footer>
+</body>
+</html>
