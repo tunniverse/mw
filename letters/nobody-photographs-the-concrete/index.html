@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nobody Photographs the Concrete · Letter No. 1 | Mysterious Water</title>
+<meta name="description" content="Sentiment is at extreme fear. The foundations of crypto and AI are still being poured. A letter on what lasts after the noise, with open research from 2011 to today.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://mysteriouswater.com/letters/nobody-photographs-the-concrete/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="Mysterious Water">
+<meta property="og:title" content="Nobody Photographs the Concrete · Letter No. 1 | Mysterious Water">
+<meta property="og:description" content="Sentiment is at extreme fear. The foundations of crypto and AI are still being poured. A letter on what lasts after the noise, with open research from 2011 to today.">
+<meta property="og:url" content="https://mysteriouswater.com/letters/nobody-photographs-the-concrete/">
+<meta property="og:image" content="https://mysteriouswater.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thetunniverse">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-11-26">
+<meta property="article:author" content="https://mysteriouswater.com/about/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Nobody Photographs the Concrete",
+  "description": "Sentiment is at extreme fear. The foundations of crypto and AI are still being poured. A letter on what lasts after the noise, with open research from 2011 to today.",
+  "datePublished": "2026-11-26",
+  "author": { "@type": "Person", "name": "Tunyalit Karnjanakul", "url": "https://mysteriouswater.com/about/" },
+  "publisher": { "@type": "Organization", "name": "Mysterious Water", "url": "https://mysteriouswater.com/" },
+  "mainEntityOfPage": "https://mysteriouswater.com/letters/nobody-photographs-the-concrete/"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cormorant+SC:wght@500&family=Manrope:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a navy cover band (sharp section) with the moving water field; then one 680px reading column on white,
+   with a sticky "on this page" rail in the left margin on wide screens; data lives in rounded layers (mood card, research notes).
+   Faces: Cormorant SC capitals for headings, Manrope for reading, Geist Mono for figures, dates and sources. */
+:root{
+  --white:#FFFFFF; --ink:#121212; --navy:#18263A; --ivory:#F8F5EF; --mist:#FBF8F2;
+  --gold:#C9B48A; --gold-hi:#E8D6AC; --gold-light:#FFF4D8; --gold-navy:#D9C49A; --gold-text:#7D6A45;
+  --body:#3F3C37; --muted:#6F675C; --hair:#E8E3D8; --line:#DDD6C8; --navy-text:#D5D9E0; --navy-ink:#F3EFE7;
+  --sc:'Cormorant SC',Georgia,serif; --sans:Manrope,'Helvetica Neue',Arial,sans-serif; --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --pad:max(20px,5vw); --col:680px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
+.cp{font-family:Copperplate,'Copperplate Gothic Light','Copperplate Gothic','Copperplate Gothic Std',var(--sc);text-transform:uppercase;letter-spacing:.18em;font-weight:400}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+
+.progress{position:fixed;z-index:30;left:0;right:0;top:0;height:2px;background:var(--gold);transform-origin:left center;transform:scaleX(0)}
+
+/* ---------- header ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;padding-block:24px}
+.brand{display:inline-flex;align-items:center;gap:14px}
+.brand .mw-mark{display:block;height:32px;width:auto}
+.brand .word{display:block;width:min(250px,52vw);height:auto}
+.top nav{display:flex;flex-wrap:wrap;gap:8px 30px;font-size:12.5px}
+.top nav a:hover,.top nav a[aria-current]{color:var(--gold-text)}
+
+/* ---------- cover: a sharp navy section with the water field ---------- */
+.cover{position:relative;background:radial-gradient(ellipse 90% 70% at 50% 0%,#22364F 0%,rgba(34,54,79,0) 70%),var(--navy);color:var(--navy-ink);padding-block:clamp(72px,11vh,128px) clamp(64px,9vh,104px)}
+.cover > .field{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 80%,transparent 100%)}
+.cover > .wrap{position:relative;z-index:1}
+.cover .in{max-width:820px;margin:0 auto;text-align:center}
+.cover .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--gold-navy)}
+.cover .kicker b{font-weight:500;color:var(--navy-ink)}
+.cover h1{font-family:var(--sc);font-weight:500;text-transform:uppercase;font-size:clamp(40px,6vw,84px);line-height:1.02;letter-spacing:.035em;margin:26px auto 0;max-width:14ch;text-wrap:balance}
+.cover .dek{font-size:clamp(17px,1.6vw,20px);line-height:1.65;color:var(--navy-text);max-width:36em;margin:28px auto 0;text-wrap:pretty}
+.byline{display:inline-flex;align-items:center;gap:14px;margin-top:38px;text-align:left}
+.byline img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 22%;box-shadow:0 0 0 1px rgba(217,196,154,.5)}
+.byline .who{display:flex;flex-direction:column;gap:3px}
+.byline .who span:first-child{font-size:14px;font-weight:500;color:var(--navy-ink)}
+.byline .who .mono{color:var(--navy-text);font-size:11px}
+
+/* ---------- reading column ---------- */
+.reading{position:relative;padding-block:clamp(64px,9vh,104px) 40px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,var(--col)) minmax(0,1fr);column-gap:40px}
+.article{grid-column:2;min-width:0}
+/* on this page: sticky in the left margin on wide screens */
+.toc{grid-column:1;justify-self:end;position:sticky;top:40px;align-self:start;width:200px;margin-top:6px}
+.toc .mono{display:block;color:var(--muted);margin-bottom:12px}
+.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--hair)}
+.toc a{display:block;position:relative;font-size:13px;line-height:1.4;color:var(--muted);padding:7px 0 7px 16px;transition:color .2s}
+.toc a::before{content:"";position:absolute;left:-1px;top:8px;bottom:8px;width:1px;background:transparent;transition:background-color .3s}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink)}
+.toc a.on::before{background:var(--gold);width:2px;left:-1.5px}
+
+.article p{font-size:18.5px;line-height:1.8;color:var(--body);margin:0 0 24px;text-wrap:pretty}
+.article p.first{font-size:21px;line-height:1.7;color:var(--ink)}
+/* a one-line paragraph that carries the idea gets the room of a statement */
+.article p.statement{font-size:clamp(23px,2.4vw,28px);line-height:1.4;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin:40px 0;padding-left:24px;border-left:2px solid var(--gold)}
+.article h2{font-family:var(--sc);font-weight:500;text-transform:uppercase;font-size:clamp(27px,2.6vw,34px);line-height:1.12;letter-spacing:.06em;margin:72px 0 22px;scroll-margin-top:32px;text-wrap:balance}
+.article h2::before{content:"";display:block;width:32px;height:1px;background:var(--gold);margin-bottom:22px}
+.article ul,.article ol.signals{margin:0 0 28px;padding:0;list-style:none}
+.article ul li{position:relative;font-size:18px;line-height:1.75;color:var(--body);padding-left:26px;margin-bottom:12px}
+.article ul li::before{content:"";position:absolute;left:2px;top:.85em;width:12px;height:1px;background:var(--gold)}
+.article strong{font-weight:600;color:var(--ink)}
+.article a.ext{color:var(--ink);border-bottom:1px solid var(--gold)}
+.article a.ext::after{content:"↗";font-family:var(--mono);font-size:.7em;color:var(--gold-text);margin-left:2px;vertical-align:.25em}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;color:var(--gold-text);padding:0 1px;margin-left:1px}
+sup a:hover{color:var(--ink)}
+
+/* ---------- layers (rounded): the mood card and the research notes ---------- */
+.mood{margin:8px 0 34px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:0 30px 60px -48px rgba(24,38,58,.3)}
+.mood header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--hair);background:var(--mist)}
+.mood header .mono{color:var(--muted)}
+.mood header .asof{display:inline-flex;align-items:center;gap:8px}
+.mood header .asof i{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.mood ul{margin:0!important}
+.mood li{display:grid!important;grid-template-columns:5.6em minmax(0,1fr);gap:16px;align-items:baseline;padding:15px 18px!important;margin:0!important;border-top:1px solid var(--hair);font-size:16px!important;line-height:1.6!important}
+.mood li:first-child{border-top:0}
+.mood li::before{display:none}
+.mood .fig{font-family:var(--mono);font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--ink);font-variant-numeric:tabular-nums}
+
+.notes{position:relative;margin:56px 0;padding:clamp(26px,4vw,40px);background:var(--ivory);border-radius:18px;overflow:hidden}
+.notes::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-hi),var(--gold))}
+.notes .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-bottom:10px}
+.notes .label .mono{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-text)}
+.notes .label .mono + .mono{text-transform:none;letter-spacing:.02em;color:var(--muted)}
+.notes .intro{font-size:15.5px!important;line-height:1.65!important;color:var(--muted)!important;margin:0 0 8px!important}
+.notes h3{font-size:14px;font-weight:600;letter-spacing:.01em;margin:30px 0 12px;display:flex;align-items:baseline;gap:10px}
+.notes h3 .mono{color:var(--gold-text);font-size:11px}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--white);border:1px solid var(--hair);border-radius:12px}
+.tbl table{width:100%;min-width:440px;border-collapse:collapse;font-size:14.5px}
+.tbl th{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 16px;border-bottom:1px solid var(--hair);background:var(--mist)}
+.tbl td{padding:11px 16px;border-top:1px solid var(--hair);vertical-align:baseline;color:var(--body);line-height:1.5}
+.tbl tr:first-child td{border-top:0}
+.tbl td.when{font-family:var(--mono);font-size:12.5px;color:var(--ink);white-space:nowrap}
+.tbl td.val{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--ink);white-space:nowrap}
+.tbl td.note{font-size:13.5px;color:var(--muted)}
+.notes .caveat{font-size:13px!important;color:var(--muted)!important;margin:10px 0 0!important}
+.notes h4{font-size:14px;font-weight:600;margin:30px 0 10px}
+.notes ul li{font-size:15.5px!important;line-height:1.65!important}
+
+
+/* line charts sit above each table: see the shape first, then read the exact figures */
+.chart{margin:0 0 10px;background:var(--white);border:1px solid var(--hair);border-radius:12px;padding:14px 14px 6px}
+.chart figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;margin:0 2px 4px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.chart figcaption .mono{color:var(--muted);font-weight:400;font-size:11px}
+.plot{position:relative;height:230px}
+.plot svg{display:block;width:100%;height:100%;overflow:visible;touch-action:pan-y;cursor:crosshair}
+.plot svg:focus-visible{outline:2px solid var(--gold-text);outline-offset:4px;border-radius:6px}
+.tip{position:absolute;z-index:2;pointer-events:none;display:flex;flex-direction:column;gap:2px;background:var(--white);border:1px solid var(--hair);border-radius:8px;box-shadow:0 10px 24px -12px rgba(24,38,58,.35);padding:7px 10px;font-size:13.5px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .15s}
+.tip .mono{color:var(--muted);font-size:10.5px}
+.tip b{font-weight:600;color:var(--ink)}
+.tip.on{opacity:1}
+.live-region{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.chart-note{font-size:12.5px!important;color:var(--muted)!important;margin:6px 2px 14px!important;line-height:1.5!important}
+@media (max-width:600px){.plot{height:210px}.chart{padding:12px 8px 4px}}
+
+/* signals: an ordered list with mono numbers */
+.signals li{display:grid;grid-template-columns:2.4em minmax(0,1fr);gap:8px;padding:16px 0;border-top:1px solid var(--hair);font-size:18px;line-height:1.7;color:var(--body)}
+.signals li:last-child{border-bottom:1px solid var(--hair)}
+.signals .n{font-family:var(--mono);font-size:12px;color:var(--gold-text);padding-top:.45em}
+
+/* ending */
+.closing{font-size:clamp(24px,2.6vw,30px)!important;line-height:1.35!important;font-weight:500;letter-spacing:-.01em;color:var(--ink)!important;margin:44px 0 0!important;text-wrap:balance}
+.sign{display:flex;align-items:center;gap:16px;margin:48px 0 0;padding-top:28px;border-top:1px solid var(--hair)}
+.sign img{height:42px;width:auto}
+.sign .q{font-size:15px;color:var(--muted);margin:0}
+.sign .t{font-family:var(--sc);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:22px;margin:2px 0 0;color:var(--ink)}
+.next{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin:44px 0 0;padding:22px 24px;border:1px solid var(--hair);border-radius:16px;background:var(--white);box-shadow:0 30px 60px -48px rgba(24,38,58,.3)}
+.next .mono{display:block;color:var(--gold-text);margin-bottom:6px;text-transform:uppercase;letter-spacing:.12em;font-size:10.5px}
+.next p{margin:0!important;font-size:17px!important;line-height:1.5!important;color:var(--ink)!important}
+.next .go{display:flex;gap:8px;flex-wrap:wrap}
+.next .go a{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;padding:9px 14px;border:1px solid var(--line);border-radius:8px;transition:border-color .2s,background-color .2s}
+.next .go a::after{content:"↗";font-family:var(--mono);font-size:11px;color:var(--gold-text)}
+.next .go a:hover{border-color:var(--gold);background:var(--mist)}
+.legal{font-size:13px!important;line-height:1.7!important;color:var(--muted)!important;margin:36px 0 0!important}
+
+/* sources */
+.sources{margin-top:56px;padding-top:28px;border-top:1px solid var(--ink)}
+.sources h2{margin:0 0 18px!important;font-size:22px!important}
+.sources h2::before{display:none!important}
+.sources ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.sources li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:8px;padding:12px 0;border-top:1px solid var(--hair);font-size:14px;line-height:1.6;color:var(--body);scroll-margin-top:40px}
+.sources li:target{background:var(--gold-light);border-radius:8px}
+.sources li .n{font-family:var(--mono);font-size:11.5px;color:var(--gold-text);padding-top:.15em}
+.sources a{color:var(--ink);border-bottom:1px solid var(--gold);overflow-wrap:anywhere}
+.sources a::after{content:"↗";font-family:var(--mono);font-size:.75em;color:var(--gold-text);margin-left:2px}
+.sources .d{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* talk to us */
+.talk{background:var(--ivory);padding-block:clamp(64px,9vh,96px);text-align:center;margin-top:72px}
+.talk .mono{color:var(--gold-text);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px}
+.talk p.h{font-family:var(--sc);font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(26px,2.8vw,36px);margin:14px 0 0}
+.talk p.s{font-size:16.5px;line-height:1.7;color:var(--body);margin:12px auto 0;max-width:34em}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:14.5px;font-weight:600;background:var(--navy);color:var(--white);padding:14px 22px;border-radius:8px;transition:background-color .2s}
+.btn::after{content:"→";transition:transform .25s}
+.btn:hover{background:#22344D}.btn:hover::after{transform:translateX(3px)}
+
+footer{padding-block:40px 48px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+footer .cp{font-size:12px;color:var(--muted)}
+
+.follow{position:fixed;z-index:20;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:2px;padding:4px 6px 4px 20px;background:var(--white);border:1px solid var(--gold);border-radius:999px;box-shadow:0 10px 30px rgba(24,38,58,.10);
+  opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s linear .5s}
+.follow.show{opacity:1;visibility:visible;transform:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.follow .cp{font-size:11px;color:var(--gold-text);margin-right:8px}
+.follow .ico{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;color:var(--ink)}
+.follow .ico:hover{color:var(--gold-text)}
+.follow svg{width:18px;height:18px;display:block}
+
+@media (max-width:1180px){.layout{grid-template-columns:minmax(0,1fr)}.article{grid-column:1;max-width:var(--col);margin:0 auto;width:100%}.toc{display:none}}
+@media (max-width:600px){.article p{font-size:17.5px}.article p.first{font-size:19px}.article ul li,.signals li{font-size:17px}.mood li{grid-template-columns:4.6em minmax(0,1fr);gap:12px}.mood .fig{font-size:16px}.top nav{gap:8px 20px}.next{padding:20px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<span class="progress" id="progress" aria-hidden="true"></span>
+
+<header class="top wrap">
+  <a class="brand" href="/" aria-label="Mysterious Water, home"><img class="mw-mark" src="/mw-monogram.png" alt="" width="160" height="198"><img class="word" src="/mw-wordmark-spaced.png" alt="Mysterious Water" width="1200" height="101"></a>
+  <nav class="cp" aria-label="Main"><a href="/#work">What we do</a><a href="/about/">About</a><a href="/#letter" aria-current="page">The Letter</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<section class="cover navy-grid" aria-labelledby="title">
+  <div class="wrap"><div class="in">
+    <span class="kicker mono"><b>Letter No. 1</b> · Mysterious Water</span>
+    <h1 id="title">Nobody Photographs the Concrete</h1>
+    <p class="dek">Sentiment is at extreme fear. The foundations are still being poured. A letter on crypto, AI, and what lasts after the noise.</p>
+    <div class="byline">
+      <img src="/tun-karnjanakul.jpg" alt="" width="1360" height="1456">
+      <span class="who"><span>By Tunyalit Karnjanakul</span><span class="mono">26 Nov 2026 · 7 min read</span></span>
+    </div>
+  </div></div>
+</section>
+
+<main class="reading wrap">
+  <div class="layout">
+    <nav class="toc" aria-label="On this page">
+      <span class="mono">On this page</span>
+      <ol>
+        <li><a href="#floor">The floor, not the house</a></li>
+        <li><a href="#mood">The mood right now</a></li>
+        <li><a href="#notes">Research notes</a></li>
+        <li><a href="#gap">Reading the gap</a></li>
+        <li><a href="#second">The second floor</a></li>
+        <li><a href="#meet">Where the two floors meet</a></li>
+        <li><a href="#watching">What I'm watching</a></li>
+        <li><a href="#take">What I take from it</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </nav>
+
+    <article class="article">
+      <p class="first">I first came across Bitcoin in 2014. What caught me wasn't the price. It was the idea: a ledger nobody owns, that anyone can check, and that moves value across the world without asking permission.</p>
+      <p>At my previous startup, we built software that carried orders and payments for restaurants and hotels. Every day I watched money travel through layers: banks, gateways, card networks, fees, settlement delays. Each layer took a little time and a little money. Each had a door someone could close.</p>
+      <p class="statement">Bitcoin was the first time I saw money as software.</p>
+
+      <h2 id="floor">The floor, not the house</h2>
+      <p>When people talk about crypto, they talk about the house: the price, the new coins, the people who got rich or got wiped out. That's the part that gets photographed.</p>
+      <p>I've always been more interested in the concrete. A foundation is the least exciting part of any building. It's poured early, it's buried, and nobody posts it. But it decides how tall the building can be, and whether it stands when the weather turns.</p>
+      <p>At its core, crypto is a new floor for finance. Value can be held without a middleman, moved at any hour, and programmed like any other piece of software. Most of what has been built on that floor so far is noisy, and some of it is nonsense. The question that matters is whether the floor itself keeps getting stronger.</p>
+
+      <h2 id="mood">The mood right now</h2>
+      <p>As I write this in late November 2026, the house looks bad.</p>
+      <div class="mood">
+        <header><span class="mono">Market mood</span><span class="mono asof"><i aria-hidden="true"></i>As of 26 Nov 2026</span></header>
+        <ul>
+          <li><span class="fig">13</span><span>The Crypto Fear &amp; Greed Index sits at 13, deep in "extreme fear." A month earlier it read 51, neutral.<sup><a href="#s5">5</a></sup></span></li>
+          <li><span class="fig">~$60K</span><span>Bitcoin trades around $60,000, roughly half its October 2025 peak of about $125,700.<sup><a href="#s3">3</a>,<a href="#s4">4</a></sup></span></li>
+          <li><span class="fig">$6.3B</span><span>On 29 October, Binance lost about $6.3 billion in a record exchange hack, which the FBI attributed to North Korea.<sup><a href="#s6">6</a></sup></span></li>
+          <li><span class="fig">~$5B</span><span>US spot Bitcoin ETFs saw close to $5 billion of outflows in November.<sup><a href="#s4">4</a></sup></span></li>
+          <li><span class="fig">92%</span><span>Prediction markets give roughly a 92% chance that the Fed raises rates in December. Inflation is staying sticky, and part of the blame is going to the AI boom.<sup><a href="#s5">5</a></sup></span></li>
+        </ul>
+      </div>
+      <p>That last point is worth sitting with. The two forces this letter is about are already touching: the AI build-out is big enough to move inflation, and inflation is moving crypto.</p>
+      <p>Look only at the house and the conclusion is easy: stay away. So I looked underneath.</p>
+
+      <aside class="notes" id="notes" aria-labelledby="notes-h">
+        <div class="label"><span class="mono" id="notes-h">Research notes · Open data</span><span class="mono">2011 to today</span></div>
+        <p class="intro">I keep these numbers for myself. I'm sharing them so you can check them too. Sources are at the end.</p>
+
+        <h3><span class="mono">01</span>What the Bitcoin network is worth</h3>
+        <figure class="chart" data-chart="btc"><figcaption><span>Bitcoin network value, 2011 to 2026</span><span class="mono">Log scale · each line is 10×</span></figcaption><div class="plot"></div><span class="live-region" aria-live="polite"></span></figure>
+        <p class="chart-note">Dots are the data points. Straight lines join them; the real path between them had large rises and falls.</p>
+        <div class="tbl" tabindex="0" role="region" aria-label="Bitcoin market value over time">
+          <table>
+            <thead><tr><th>When</th><th>Market value</th><th>Note</th></tr></thead>
+            <tbody>
+              <tr><td class="when">2011</td><td class="val">≈ $40 million</td><td class="note">~8 million coins at ~$5 after the first crash (the price peaked at $31.91 that June)<sup><a href="#s1">1</a></sup></td></tr>
+              <tr><td class="when">2013</td><td class="val">≈ $1 billion</td><td class="note"><sup><a href="#s2">2</a></sup></td></tr>
+              <tr><td class="when">Dec 2017</td><td class="val">≈ $237 billion</td><td class="note"><sup><a href="#s2">2</a></sup></td></tr>
+              <tr><td class="when">May 2021</td><td class="val">&gt; $1 trillion</td><td class="note">First time<sup><a href="#s2">2</a></sup></td></tr>
+              <tr><td class="when">Oct 2025</td><td class="val">≈ $2.5 trillion</td><td class="note">All-time high, about $125,700 per coin<sup><a href="#s3">3</a></sup></td></tr>
+              <tr><td class="when">Nov 2026</td><td class="val">≈ $1.2 trillion</td><td class="note">About $60,000 per coin; the whole crypto market ≈ $2.1 trillion<sup><a href="#s4">4</a></sup></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3><span class="mono">02</span>People who own crypto</h3>
+        <figure class="chart" data-chart="owners"><figcaption><span>People who own crypto, 2018 to 2026</span><span class="mono">Millions of people</span></figcaption><div class="plot"></div><span class="live-region" aria-live="polite"></span></figure>
+        <div class="tbl" tabindex="0" role="region" aria-label="Crypto owners over time">
+          <table>
+            <thead><tr><th>When</th><th>Owners</th></tr></thead>
+            <tbody>
+              <tr><td class="when">2018</td><td class="val">35 million+<sup><a href="#s7">7</a></sup></td></tr>
+              <tr><td class="when">Dec 2021</td><td class="val">295 million<sup><a href="#s8">8</a></sup></td></tr>
+              <tr><td class="when">Dec 2024</td><td class="val">659 million<sup><a href="#s9">9</a></sup></td></tr>
+              <tr><td class="when">2026</td><td class="val">≈ 742 million<sup><a href="#s10">10</a></sup></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caveat">2018 counts identity-verified users. Different studies count in different ways, so read this as a direction, not a precise line.</p>
+
+        <h3><span class="mono">03</span>Stablecoins: dollars that live on blockchains</h3>
+        <figure class="chart" data-chart="stable"><figcaption><span>Stablecoin supply, 2020 to 2026</span><span class="mono">US dollars · no data shown for 2022–23</span></figcaption><div class="plot"></div><span class="live-region" aria-live="polite"></span></figure>
+        <div class="tbl" tabindex="0" role="region" aria-label="Stablecoin supply over time">
+          <table>
+            <thead><tr><th>When</th><th>Supply</th></tr></thead>
+            <tbody>
+              <tr><td class="when">End 2020</td><td class="val">≈ $27 billion</td></tr>
+              <tr><td class="when">End 2021</td><td class="val">≈ $163 billion</td></tr>
+              <tr><td class="when">End 2024</td><td class="val">≈ $206 billion</td></tr>
+              <tr><td class="when">End 2025</td><td class="val">≈ $308 billion</td></tr>
+              <tr><td class="when">Oct 2026</td><td class="val">≈ $306 billion</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caveat">Source for the whole table: <a href="#s11" style="border-bottom:1px solid var(--gold)">11</a>.</p>
+
+        <h4>What the numbers don't say</h4>
+        <ul>
+          <li><strong>It's not a straight line.</strong> Bitcoin has fallen more than 50% several times, including right now.</li>
+          <li><strong>Owning is not using.</strong> Real stablecoin payments were about $390 billion in 2025, roughly 0.02% of global payment flows.<sup><a href="#s11">11</a></sup></li>
+          <li><strong>Growth isn't safety.</strong> Collapses, hacks and fraud are part of this history too.</li>
+        </ul>
+      </aside>
+
+      <h2 id="gap">Reading the gap</h2>
+      <p>This is the part of the analysis that matters most to me: sentiment and foundation are telling two different stories.</p>
+      <p>Sentiment says fear. The foundation says something else:</p>
+      <ul>
+        <li>By most counts, more people hold crypto than ever.</li>
+        <li>About $300 billion in digital dollars sits on blockchains, close to its record.</li>
+        <li>Real stablecoin payments grew about 42% in the first eight months of 2026 compared with the same months of 2025.<sup><a href="#s11">11</a></sup></li>
+      </ul>
+      <p class="statement">Markets price the mood. Foundations follow usage.</p>
+      <p>In the short run, the mood usually wins. Over years, usage usually does. Not always, and not for every project built on top.</p>
+
+      <h2 id="second">The second floor: work as software</h2>
+      <p>More than a decade after I first read about Bitcoin, I felt the same shift again, this time with AI.</p>
+      <p>If crypto turns money into software, AI turns work into software. Writing, designing, analyzing, coding and operating are all getting cheaper, fast.</p>
+      <ul>
+        <li>Gartner expected 40% of enterprise applications to include task-specific AI agents by the end of 2026, up from under 5% in 2025.<sup><a href="#s12">12</a></sup></li>
+        <li>Adobe measured AI-referred visits to US retail sites up 393% year on year in early 2026, and those visitors now buy more often than average.<sup><a href="#s12">12</a></sup></li>
+      </ul>
+      <p>One person with good systems can now do what used to take a department. Creation and production are being rebuilt on this second floor. Like the first, most of what you see is noise: demos, hype, fear. The concrete underneath is what matters.</p>
+
+      <h2 id="meet">Where the two floors meet</h2>
+      <p>AI agents increasingly act on our behalf: booking, buying, paying for data, paying other agents. To do that, they need money they can hold and move by themselves, at machine speed, under rules we set. Card rails were built for humans with office hours. Programmable money was built for exactly this.</p>
+      <p>It's already starting. Coinbase's x402 lets an AI agent pay with a stablecoin inside a single web request. Through Coinbase's own service alone, it has processed more than 100 million transactions. Total volume is only about $28 million, which tells you the shape: millions of tiny payments, machines paying machines.<sup><a href="#s13">13</a></sup> Google, Stripe with OpenAI, Visa and Mastercard all now run their own agent-payment standards or programs.</p>
+      <p class="statement">The numbers are small. That's what early concrete looks like.</p>
+
+      <h2 id="watching">What I'm watching</h2>
+      <p>No price targets here. I don't know where prices go, and neither does anyone else. These are the signals I'll follow through the fear:</p>
+      <ol class="signals">
+        <li><span class="n">01</span><span><strong>Real stablecoin payments, not just supply.</strong> Usage is the foundation. Supply is just inventory.</span></li>
+        <li><span class="n">02</span><span><strong>Agent payment volume.</strong> When that $28 million becomes billions, the two floors will have joined.</span></li>
+        <li><span class="n">03</span><span><strong>Ownership through the downturn.</strong> If the number of owners holds while prices fall, the base is real.</span></li>
+        <li><span class="n">04</span><span><strong>Security.</strong> The Binance hack began with a fake job interview and an internal AI tool. Custody and security are part of the foundation too.<sup><a href="#s6">6</a></sup></span></li>
+        <li><span class="n">05</span><span><strong>Rates.</strong> If the AI boom keeps inflation sticky, money stays expensive, and that pressure lands on risk assets first.</span></li>
+      </ol>
+
+      <h2 id="take">What I take from it</h2>
+      <p>Foundations are slow and messy, and much of what gets built on them fails. So the approach I keep coming back to is simple:</p>
+      <ul>
+        <li>Understand the floor before you get excited about the house.</li>
+        <li>Watch whether the foundation keeps getting stronger, especially when the mood is at its worst.</li>
+        <li>Move carefully, in small steps, with rules written on a calm day.</li>
+      </ul>
+      <p>Concrete gets poured when nobody is watching. Most people only notice the building once it's finished.</p>
+      <p class="closing">Nobody photographs the concrete. But it's the reason anything stays standing.</p>
+
+      <div class="sign">
+        <img src="/mw-monogram.png" alt="" width="160" height="198">
+        <div><p class="q">Quiet money moves like water.</p><p class="t">Tun</p></div>
+      </div>
+
+      <p class="legal">This letter shares personal views and public data for education. It is not investment advice. Nothing here is an offer or a recommendation to buy or sell any asset. Crypto assets are volatile, and you can lose all of your money.</p>
+
+      <section class="sources" id="sources" aria-labelledby="sources-h">
+        <h2 id="sources-h">Sources</h2>
+        <ol>
+          <li id="s1"><span class="n">01</span><span>Bitcoin 2011 price: Bitcoin Magazine, <a href="https://bitcoinmagazine.com/markets/anniversary-of-the-great-bubble-of-2011-1339139269" target="_blank" rel="noopener">"Anniversary of the Great Bubble of 2011"</a> <span class="d">(Jun 2012)</span>. The 2011 market value is estimated from ~8 million coins × ~$5.</span></li>
+          <li id="s2"><span class="n">02</span><span>Bitcoin market value 2013, 2017, 2021: <a href="https://www.independentreserve.com/blog/knowledge-base/bitcoin-statistics-price-market-cap-growth-mining-energy-consumption" target="_blank" rel="noopener">Independent Reserve</a></span></li>
+          <li id="s3"><span class="n">03</span><span>Bitcoin all-time high, Oct 2025: <a href="https://www.theblock.co/post/373369/bitcoin-hits-new-all-time-high-crosses-125000-for-the-first-time-as-uptober-momentum-builds" target="_blank" rel="noopener">The Block</a>. Market value ≈ $2.5T: TweakTown, Oct 2025.</span></li>
+          <li id="s4"><span class="n">04</span><span>Nov 2026 prices, total market, ETF outflows, stablecoin dip after the hack: <a href="https://finscans.com/news/2026/11/26/bitcoin-recovers-above-60k-as-crypto-market-cap-climbs-13" target="_blank" rel="noopener">FinScans</a> <span class="d">(26 Nov 2026)</span>. The Bitcoin market value is estimated from ~20 million coins × ~$60,000.</span></li>
+          <li id="s5"><span class="n">05</span><span>Fear &amp; Greed Index (13, 25 Nov 2026): <a href="https://usmacro.com/indicator/crypto_fear_greed" target="_blank" rel="noopener">usmacro.com</a>. Index at 11 vs 51 a month earlier, and Polymarket's 92% odds of a December hike: <a href="https://www.kucoin.com/news/flash/crypto-fear-index-hits-11-amid-high-odds-of-december-2026-fed-rate-hike" target="_blank" rel="noopener">KuCoin News</a> <span class="d">(18 Nov 2026)</span></span></li>
+          <li id="s6"><span class="n">06</span><span>Binance hack (29 Oct 2026, ~$6.34B, FBI attribution, how it happened): <a href="https://www.stepsecurity.io/blog/binance-hack-developer-machine-security" target="_blank" rel="noopener">StepSecurity</a> · <a href="https://www.bloomberg.com/news/articles/2026-11-03/binance-hackers-used-fake-job-interviews-in-6-3-billion-heist" target="_blank" rel="noopener">Bloomberg</a></span></li>
+          <li id="s7"><span class="n">07</span><span>2018 users: <a href="https://www.jbs.cam.ac.uk/insight/2018/second-annual-survey-of-global-cryptoasset-activity" target="_blank" rel="noopener">Cambridge Centre for Alternative Finance</a> <span class="d">(Dec 2018)</span></span></li>
+          <li id="s8"><span class="n">08</span><span>2021 owners: Crypto.com, via <a href="https://cryptoslate.com/there-could-be-1-billion-global-crypto-users-by-the-end-of-2022-and-more-than-half-will-own-bitcoin/" target="_blank" rel="noopener">CryptoSlate</a></span></li>
+          <li id="s9"><span class="n">09</span><span>2024 owners: <a href="https://crypto.com/en/company-news/global-cryptocurrency-owners-grow-to-659-million-through-2024" target="_blank" rel="noopener">Crypto.com</a> <span class="d">(Feb 2025)</span></span></li>
+          <li id="s10"><span class="n">10</span><span>2026 owners: Henley &amp; Partners 2026 Crypto Wealth Report, via <a href="https://www.kucoin.com/news/flash/global-crypto-holders-reach-742m-millionaire-count-drops-in-2026-report" target="_blank" rel="noopener">CoinDesk/KuCoin</a></span></li>
+          <li id="s11"><span class="n">11</span><span>Stablecoin supply, real payments 2025, +42% payments in Jan–Aug 2026: <a href="https://insights.muffinpay.com/stablecoin-market-report-2026/" target="_blank" rel="noopener">MuffinPay Stablecoin Market Report 2026</a> <span class="d">(DefiLlama, McKinsey/Artemis)</span></span></li>
+          <li id="s12"><span class="n">12</span><span>Gartner forecast and Adobe AI-referred traffic: <a href="https://en.wikipedia.org/wiki/Agentic_commerce" target="_blank" rel="noopener">Wikipedia, "Agentic commerce"</a> <span class="d">(citing Gartner, Aug 2025; Adobe, Q1 2026)</span></span></li>
+          <li id="s13"><span class="n">13</span><span>x402 transactions and volume (Coinbase CDP data, 13 Nov 2026), AP2: <a href="https://stablecoininsider.org/agentic-payments-and-stablecoins-how-ai-agents-are-revolutionizing-autonomous-machine-to-machine-transactions-in-2026/" target="_blank" rel="noopener">Stablecoin Insider</a></span></li>
+        </ol>
+      </section>
+    </article>
+  </div>
+</main>
+
+<section class="talk" aria-label="Start a conversation">
+  <div class="wrap">
+    <span class="mono">After the letter</span>
+    <p class="h">Start a conversation.</p>
+    <p class="s">A question, a correction, or a different view on the data. We read every message ourselves.</p>
+    <a class="btn" href="/#contact">Write to us</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span class="cp">© 2026 Mysterious Water · Phuket</span>
+</footer>
+
+<div class="follow" id="follow">
+  <span class="cp">Follow</span>
+  <a class="ico" href="https://instagram.com/thetunniverse" target="_blank" rel="noopener" aria-label="Instagram @thetunniverse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+  <a class="ico" href="https://x.com/thetunniverse" target="_blank" rel="noopener" aria-label="X @thetunniverse"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+</div>
+
+<script>
+(() => {
+  const clamp = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const bar = document.getElementById('progress'), follow = document.getElementById('follow');
+  const art = document.querySelector('.article'), cover = document.querySelector('.cover');
+  const links = [...document.querySelectorAll('.toc a')];
+  const targets = links.map(a => document.querySelector(a.getAttribute('href')));
+  let queued = false;
+  function frame() {
+    queued = false;
+    // progress measures the article itself, not the footer
+    const r = art.getBoundingClientRect(), vh = innerHeight;
+    bar.style.transform = `scaleX(${clamp((vh * 0.5 - r.top) / r.height).toFixed(4)})`;
+    // the section you are reading lights up in the rail
+    let cur = 0;
+    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < vh * 0.35) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur && r.top < vh * 0.35));
+    follow.classList.toggle('show', scrollY > cover.offsetTop + cover.offsetHeight * 0.8);
+  }
+  const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  frame();
+})();
+</script>
+<script>
+/* Liquid field: gold contour lines over the navy bands, seen at a low angle so they recede into depth.
+   Lines come from a slowly flowing height field (domain-warped waves), drawn with marching squares.
+   Runs only while a band is on screen, at ~30 fps; with reduced motion it draws one still frame. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bands = [...document.querySelectorAll('.navy-grid')];
+  const LEVELS = [-1.5, -1.05, -0.6, -0.15, 0.3, 0.75, 1.2, 1.65];
+  const field = (x, y, t) =>
+    Math.sin(x * 0.9 + Math.sin(y * 0.55 + t * 0.30) * 1.5 + t * 0.20) +
+    Math.sin(y * 1.05 + Math.sin(x * 0.45 - t * 0.24) * 1.3 - t * 0.14) * 0.8 +
+    Math.sin((x + y) * 0.38 + t * 0.09) * 0.55;
+  const items = bands.map(band => {
+    const c = document.createElement('canvas');
+    c.className = 'field'; c.setAttribute('aria-hidden', 'true');
+    band.prepend(c);
+    return { band, c, ctx: c.getContext('2d'), w: 0, h: 0, on: false };
+  });
+  function size(it) {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    it.w = it.band.clientWidth; it.h = it.band.clientHeight;
+    it.c.width = Math.round(it.w * dpr); it.c.height = Math.round(it.h * dpr);
+    it.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function draw(it, t) {
+    const { ctx, w, h } = it;
+    if (!w || !h) return;
+    ctx.clearRect(0, 0, w, h);
+    const cell = w < 700 ? 14 : 12, cols = Math.ceil(w / cell) + 1, rows = Math.ceil(h / cell) + 1;
+    const v = new Float32Array(cols * rows);
+    // perspective: rows near the top are far away, so the field is sampled more densely there
+    for (let j = 0; j < rows; j++) {
+      const sy = j / (rows - 1), depth = 1 / (sy * 1.25 + 0.32);
+      const wy = depth * 2.2;
+      for (let i = 0; i < cols; i++) {
+        const sx = (i * cell - w / 2) / 520;
+        v[j * cols + i] = field(sx * depth * 1.6, wy, t);
+      }
+    }
+    LEVELS.forEach((L, k) => {
+      ctx.beginPath();
+      for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols - 1; i++) {
+        const a = v[j * cols + i], b = v[j * cols + i + 1], c2 = v[(j + 1) * cols + i + 1], d = v[(j + 1) * cols + i];
+        const n = (a > L) | ((b > L) << 1) | ((c2 > L) << 2) | ((d > L) << 3);
+        if (n === 0 || n === 15) continue;
+        const x = i * cell, y = j * cell;
+        const top = [x + cell * (L - a) / (b - a), y], right = [x + cell, y + cell * (L - b) / (c2 - b)];
+        const bot = [x + cell * (L - d) / (c2 - d), y + cell], left = [x, y + cell * (L - a) / (d - a)];
+        const seg = (p, q) => { ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); };
+        switch (n) {
+          case 1: case 14: seg(left, top); break;
+          case 2: case 13: seg(top, right); break;
+          case 3: case 12: seg(left, right); break;
+          case 4: case 11: seg(right, bot); break;
+          case 6: case 9: seg(top, bot); break;
+          case 7: case 8: seg(left, bot); break;
+          case 5: seg(left, top); seg(right, bot); break;
+          case 10: seg(top, right); seg(left, bot); break;
+        }
+      }
+      // one line carries a brighter current; the rest stay faint
+      ctx.strokeStyle = k === 4 ? 'rgba(232,214,172,.30)' : 'rgba(217,196,154,.13)';
+      ctx.lineWidth = k === 4 ? 1.1 : 0.8;
+      ctx.stroke();
+    });
+  }
+  const visible = it => it.on && it.c.offsetParent !== null;
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { const it = items.find(x => x.band === e.target); it.on = e.isIntersecting; }));
+    items.forEach(it => io.observe(it.band));
+  } else items.forEach(it => it.on = true);
+  const t0 = performance.now(); let last = 0;
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (now - last < 33) return; last = now;
+    const t = (now - t0) / 1000 * 0.35;
+    items.forEach(it => { if (visible(it)) draw(it, t); });
+  }
+  const resize = () => items.forEach(it => { size(it); draw(it, reduce ? 4 : (performance.now() - t0) / 1000 * 0.35); });
+  addEventListener('resize', resize);
+  if ('ResizeObserver' in window) items.forEach(it => new ResizeObserver(() => { size(it); draw(it, 4); }).observe(it.band));
+  resize();
+  if (!reduce) requestAnimationFrame(loop);
+})();
+</script>
+<script>
+/* Research-note line charts. One series each: one hue (a deeper gold that holds 3.6:1 on white), no legend, the caption names it.
+   Time runs to scale on the x-axis. Market value spans $40M to $2.5T, so its y-axis is logarithmic (said in the caption).
+   Dots mark the real data points; the line between them is a straight join, not the path prices took. Exact figures stay in the tables. */
+(() => {
+  const MARK = '#9C8350', WASH = 'rgba(156,131,80,.10)', GRID = '#E8E3D8', INK = '#45423C', MUTED = '#6F675C', MONO = 'Geist Mono, ui-monospace, monospace';
+  const money = v => v >= 1e12 ? `$${+(v / 1e12).toFixed(1)}T` : v >= 1e9 ? `$${+(v / 1e9).toFixed(0)}B` : v >= 1e6 ? `$${+(v / 1e6).toFixed(0)}M` : `$${v}`;
+  const count = v => v === 0 ? '0' : `${+(v / 1e6).toFixed(0)}M`;
+  // [time, label, value, exact text, short label (only on the few points worth naming), label side]
+  const CH = {
+    btc: { log: true, min: 1e7, max: 1e13, ticks: [1e7, 1e8, 1e9, 1e10, 1e11, 1e12, 1e13], fmt: money, xmin: 2010.6, xmax: 2027.4, xticks: [2011, 2014, 2017, 2020, 2023, 2026],
+      pts: [[2011.5, '2011', 4e7, '≈ $40 million', '$40M', 'above'], [2013.5, '2013', 1e9, '≈ $1 billion'], [2017.95, 'Dec 2017', 2.37e11, '≈ $237 billion'],
+            [2021.37, 'May 2021', 1e12, '> $1 trillion'], [2025.78, 'Oct 2025', 2.5e12, '≈ $2.5 trillion', '$2.5T', 'above'], [2026.88, 'Nov 2026', 1.2e12, '≈ $1.2 trillion', '$1.2T', 'below']] },
+    owners: { min: 0, max: 8e8, ticks: [0, 2e8, 4e8, 6e8, 8e8], fmt: count, xmin: 2018.4, xmax: 2027, xticks: [2019, 2021, 2023, 2025],
+      pts: [[2018.95, '2018', 3.5e7, '35 million+', '35M', 'above'], [2021.95, 'Dec 2021', 2.95e8, '295 million'], [2024.95, 'Dec 2024', 6.59e8, '659 million'], [2026.5, '2026', 7.42e8, '≈ 742 million', '742M', 'above']] },
+    stable: { min: 0, max: 3.5e11, ticks: [0, 1e11, 2e11, 3e11], fmt: money, xmin: 2020.6, xmax: 2027.2, xticks: [2021, 2023, 2025, 2027],
+      pts: [[2020.99, 'End 2020', 2.7e10, '≈ $27 billion', '$27B', 'above'], [2021.99, 'End 2021', 1.63e11, '≈ $163 billion'], [2024.99, 'End 2024', 2.06e11, '≈ $206 billion'],
+            [2025.99, 'End 2025', 3.08e11, '≈ $308 billion', '$308B', 'above'], [2026.8, 'Oct 2026', 3.06e11, '≈ $306 billion']] }
+  };
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (n, a, p) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  const txt = (svg, x, y, s, o = {}) => { const e = el('text', Object.assign({ x, y, fill: MUTED, 'font-size': 10.5, 'font-family': MONO }, o), svg); e.textContent = s; return e; };
+  function render(fig) {
+    const c = CH[fig.dataset.chart], plot = fig.querySelector('.plot'), live = fig.querySelector('.live-region');
+    plot.querySelectorAll('svg,.tip').forEach(n => n.remove());
+    const W = plot.clientWidth, H = plot.clientHeight, ml = 46, mr = 16, mt = 24, mb = 26;
+    if (!W) return;
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', tabindex: 0, 'aria-label': fig.querySelector('figcaption span').textContent + '. Use the arrow keys to step through the points. Exact values are in the table below.' }, plot);
+    const tv = v => c.log ? (Math.log10(v) - Math.log10(c.min)) / (Math.log10(c.max) - Math.log10(c.min)) : (v - c.min) / (c.max - c.min);
+    const y = v => H - mb - tv(v) * (H - mt - mb);
+    const x = v => ml + (v - c.xmin) / (c.xmax - c.xmin) * (W - ml - mr);
+    c.ticks.forEach(v => {
+      el('line', { x1: ml, x2: W - mr, y1: y(v), y2: y(v), stroke: GRID, 'stroke-width': 1, 'shape-rendering': 'crispEdges' }, svg);
+      txt(svg, ml - 8, y(v) + 3.5, c.fmt(v), { 'text-anchor': 'end' });
+    });
+    c.xticks.forEach(v => txt(svg, x(v), H - 6, v, { 'text-anchor': 'middle' }));
+    const pts = c.pts.map(([xv, lab, v, disp, short, pos]) => ({ cx: x(xv), cy: y(v), lab, disp, short, pos }));
+    const line = pts.map((p, i) => `${i ? 'L' : 'M'}${p.cx.toFixed(1)} ${p.cy.toFixed(1)}`).join('');
+    el('path', { d: `${line}L${pts[pts.length - 1].cx} ${H - mb}L${pts[0].cx} ${H - mb}Z`, fill: WASH }, svg);
+    el('path', { d: line, fill: 'none', stroke: MARK, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    const guide = el('line', { y1: mt - 8, y2: H - mb, stroke: MUTED, 'stroke-width': 1, opacity: 0 }, svg);
+    pts.forEach(p => { p.mark = el('circle', { cx: p.cx, cy: p.cy, r: 4, fill: MARK, stroke: '#fff', 'stroke-width': 2 }, svg); });
+    // name only the start, the high point and (where it differs) the latest; the rest is in the tooltip and the table
+    pts.forEach(p => { if (p.short) txt(svg, p.cx, p.pos === 'below' ? p.cy + 19 : p.cy - 11, p.short, { 'text-anchor': 'middle', fill: INK, 'font-size': 11.5, 'font-weight': 500 }); });
+    const tip = document.createElement('div'); tip.className = 'tip'; tip.setAttribute('aria-hidden', 'true'); plot.appendChild(tip);
+    let active = -1;
+    function set(i) {
+      active = i;
+      pts.forEach((p, k) => p.mark.setAttribute('r', k === i ? 6 : 4));
+      if (i < 0) { tip.classList.remove('on'); guide.setAttribute('opacity', 0); return; }
+      const p = pts[i];
+      guide.setAttribute('x1', p.cx); guide.setAttribute('x2', p.cx); guide.setAttribute('opacity', .35);
+      tip.innerHTML = '<span class="mono"></span><b></b>'; tip.firstChild.textContent = p.lab; tip.lastChild.textContent = p.disp;
+      tip.classList.add('on');
+      const tw = tip.offsetWidth;
+      tip.style.left = Math.max(tw / 2, Math.min(W - tw / 2, p.cx)) + 'px';
+      tip.style.top = Math.max(0, p.cy - 14) + 'px';
+      if (live) live.textContent = `${p.lab}: ${p.disp}`;
+    }
+    const near = px => pts.reduce((b, p, k) => Math.abs(p.cx - px) < Math.abs(pts[b].cx - px) ? k : b, 0);
+    svg.addEventListener('pointermove', e => set(near(e.clientX - svg.getBoundingClientRect().left)));
+    svg.addEventListener('pointerleave', () => set(-1));
+    svg.addEventListener('focus', () => set(active < 0 ? pts.length - 1 : active));
+    svg.addEventListener('blur', () => set(-1));
+    svg.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault(); set(Math.max(0, Math.min(pts.length - 1, (active < 0 ? 0 : active) + (e.key === 'ArrowRight' ? 1 : -1))));
+    });
+  }
+  const figs = [...document.querySelectorAll('figure.chart')];
+  figs.forEach(f => { render(f); if ('ResizeObserver' in window) new ResizeObserver(() => render(f)).observe(f.querySelector('.plot')); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => figs.forEach(render));
+})();
+</script>
+</body>
+</html>

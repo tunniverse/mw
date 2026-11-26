@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-sc t-mod">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mysterious Water · Phuket</title>
-<meta name="description" content="Trading and real estate in Phuket. Systems that compound: Bitcoin, stocks and precious metals, AI agent trading, and long-term rental income for property owners.">
+<meta name="description" content="Trading and real estate in Phuket. Systems that compound: Bitcoin, frontier tech and precious metals, AI agent trading, and rental income for property owners.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://mysteriouswater.com/">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mysterious Water">
 <meta property="og:title" content="Mysterious Water · Phuket">
-<meta property="og:description" content="Systems that compound. Trading and real estate, built with our own capital.">
+<meta property="og:description" content="Trading and real estate in Phuket. Systems that compound: Bitcoin, frontier tech and precious metals, AI agent trading, and rental income for property owners.">
 <meta property="og:url" content="https://mysteriouswater.com/">
 <meta property="og:image" content="https://mysteriouswater.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta name="twitter:site" content="@thetunniverse">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cormorant+SC:wght@500&family=Manrope:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cormorant+SC:wght@500&family=Manrope:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <style>
 html{color-scheme:light}
 img{max-width:100%}
@@ -81,12 +81,20 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .letter .head-block{text-align:center;margin:44px 0 64px}
 .letter h2{font-size:clamp(44px,5vw,72px);line-height:1;margin:0 0 14px}
 .letter .sub{font-size:16px;margin:0;color:var(--muted)}
-.letters{display:grid;grid-template-columns:7fr 5fr;gap:48px}
-.feat{background:var(--white);padding:56px 48px;display:flex;flex-direction:column;gap:18px}
+.letters{max-width:880px;margin:0 auto}
+/* Shape rule: sections and bands are sharp, geometric blocks laid on the page.
+   Anything that floats above a section as its own layer (a card, the contact frame, a photo, a button, a field) has rounded corners:
+   layers 18px, things inside a layer 10–12px, controls 8px, pills fully round. */
+.feat{color:var(--ink);background:var(--white);padding:clamp(32px,5vw,56px) clamp(24px,5vw,56px);display:flex;flex-direction:column;gap:18px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;border-radius:18px;box-shadow:0 1px 0 rgba(24,38,58,.04),0 30px 60px -44px rgba(24,38,58,.22)}
 .feat .cp,.side .cp{font-size:12px;color:var(--gold-text)}
 .feat h3{font-weight:600;font-size:clamp(34px,3.4vw,48px);line-height:1.08;margin:0}
 .feat p{font-size:17px;line-height:1.7;margin:0;color:var(--body)}
-.feat a{font-size:12px;margin-top:12px}
+.feat:hover{color:var(--ink);transform:translateY(-2px);box-shadow:0 1px 0 rgba(24,38,58,.04),0 40px 70px -44px rgba(24,38,58,.32)}
+.feat .meta{color:var(--muted)}.feat .meta b{font-weight:500;color:var(--gold-text)}
+.feat .foot{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;margin-top:10px;padding-top:18px;border-top:1px solid var(--hair)}
+.feat .foot .mono{color:var(--muted)}
+.feat .read{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--white);background:var(--navy);padding:12px 18px;border-radius:8px}
+.feat .read i{font-style:normal;transition:transform .25s}.feat:hover .read i{transform:translateX(3px)}
 .side{display:flex;flex-direction:column}
 .side article{padding:28px 0;border-top:1px solid var(--hair-ivory);display:flex;flex-direction:column;gap:10px}
 .side article:last-child{border-bottom:1px solid var(--hair-ivory)}
@@ -100,16 +108,10 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .frame .line{fill:none;stroke:var(--gold);stroke-width:1.5}
 .frame .glow{fill:none;stroke:var(--gold-light);stroke-width:3;stroke-linecap:round}
 .frame .spark{fill:#FFF6E2}
-.frame .flash{fill:rgba(255,244,216,.9);opacity:0;transform-box:fill-box;transform-origin:center}
-.frame.closed .flash{animation:flash 1.3s ease-out}
-@keyframes flash{0%{opacity:.95;transform:scale(.4)}100%{opacity:0;transform:scale(5)}}
-/* when the two comets meet: the line glints, the box fills ivory and a band of light crosses it */
-.frame.closed{background:rgba(248,245,239,1)}
-.frame.closed .line{animation:glint 1.8s ease-out}
-@keyframes glint{0%{stroke:var(--gold-hi);stroke-width:3}100%{stroke:var(--gold);stroke-width:1.5}}
-.frame::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 32%,rgba(255,244,216,.8) 50%,transparent 68%);opacity:0}
-.frame.closed::after{animation:sweep 1.9s cubic-bezier(.45,0,.2,1) .2s}
-@keyframes sweep{0%{opacity:0;transform:translateX(-38%)}25%{opacity:1}100%{opacity:0;transform:translateX(38%)}}
+.frame .flash{display:none}
+/* when the two comets meet, the box settles: it turns solid white and lifts a little off the page. No flash, no sweep. */
+.frame{transition:background-color 1.2s ease,box-shadow 1.4s ease}
+.frame.closed{background:var(--white);box-shadow:0 40px 80px -48px rgba(24,38,58,.28),0 2px 10px -6px rgba(24,38,58,.08)}
 .frame .eyebrow{font-size:12px;color:var(--gold-text);margin:0 0 10px}
 .frame h2{font-size:clamp(30px,3.2vw,40px);line-height:1.1;margin:0 0 20px;text-wrap:balance}
 .progress{display:flex;align-items:center;gap:14px;max-width:300px;margin:0 auto 28px}
@@ -122,56 +124,74 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .step{grid-area:1 / 1;display:flex;flex-direction:column;gap:20px;min-width:0;opacity:0;visibility:hidden;transform:translateX(28px);transition:opacity .3s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s linear .5s}
 .step.past{transform:translateX(-28px)}
 .step.on{opacity:1;visibility:visible;transform:none;transition:opacity .45s ease .15s,transform .6s cubic-bezier(.2,.7,.2,1) .15s,visibility 0s}
-.step .q{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(23px,2.4vw,28px);line-height:1.2;margin:0;text-align:center;text-wrap:balance}
-.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.choice{display:flex;align-items:center;gap:12px;font:inherit;font-size:15px;line-height:1.35;text-align:left;color:var(--ink);background:var(--white);border:1px solid var(--hair-ivory);padding:14px 16px;cursor:pointer;transition:border-color .25s,background-color .25s,transform .25s}
-.choice b{flex:none;display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--gold);font-size:11px;font-weight:600;color:var(--gold-text);transition:background-color .25s,color .25s}
-.choice:hover{border-color:var(--gold);transform:translateY(-1px)}
-.choice[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-light)}
-.choice[aria-pressed="true"] b{background:var(--gold);color:var(--white)}
-.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.step .q{font-family:Manrope,'Helvetica Neue',Arial,sans-serif;font-weight:500;font-size:clamp(18px,1.7vw,20px);letter-spacing:-.005em;line-height:1.35;margin:0;text-align:center;text-wrap:balance}
+/* topics read like a command menu: one row each, a key on the left, an arrow on hover */
+.choices{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:var(--white)}
+.choice{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;font:inherit;font-size:15.5px;line-height:1.35;text-align:left;color:var(--ink);background:transparent;border:0;border-top:1px solid var(--hair);border-radius:0;padding:14px 16px;cursor:pointer;transition:background-color .2s}
+.choice:first-child{border-top:0}
+.choice::after{content:"→";color:var(--gold-text);opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .25s}
+.choice:hover,.choice:focus-visible{background:#FBF8F2}
+.choice:hover::after,.choice:focus-visible::after,.choice[aria-pressed="true"]::after{opacity:1;transform:none}
+.choice:focus-visible{outline:2px solid var(--gold-text);outline-offset:-2px}
+.choice b{flex:none;display:grid;place-items:center;width:24px;height:24px;font-family:var(--mono);font-weight:500;font-size:11px;color:var(--gold-text);border:1px solid rgba(125,106,69,.4);border-radius:5px;box-shadow:inset 0 -2px 0 rgba(201,180,138,.4);transition:background-color .2s,color .2s}
+.choice[aria-pressed="true"]{background:var(--gold-light)}
+.choice[aria-pressed="true"] b{background:var(--gold);border-color:var(--gold);color:var(--white);box-shadow:none}
+.keys{margin:-6px 0 0;text-align:center;color:var(--muted)}
+.keys kbd{font:inherit;color:var(--gold-text)}
+/* details step: quiet boxed fields with a soft gold focus ring, app and network pickers built into the field */
+.frame{--line:#DDD6C8;border-radius:18px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
 .pair .wide{grid-column:1 / -1}
-.frame .field{display:flex;flex-direction:column;gap:4px;min-width:0}
-.frame .field > label{font-size:11px;color:var(--gold-text)}
-.frame .field em{font-style:normal;color:var(--muted);letter-spacing:.08em;text-transform:none;font-family:Manrope,'Helvetica Neue',Arial,sans-serif;font-size:11px}
-.frame .field input,.frame .field textarea{width:100%;font:inherit;font-size:16px;padding:10px 2px;border:0;border-bottom:1px solid rgba(18,18,18,.32);border-radius:0;background:transparent;color:var(--ink);outline:none;transition:border-color .3s}
-.frame .field textarea{resize:none;height:66px;line-height:1.5}
-.frame .field input:focus,.frame .field textarea:focus{border-bottom-color:var(--gold-text)}
-.frame .field ::placeholder{color:#A39B8E}
-.frame .field > .lbl{font-size:11px;color:var(--gold-text)}
-.frame .field .hint{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px}
-.social{display:flex;align-items:center;gap:12px;min-width:0}
-.nets{display:flex;gap:6px;flex:none}
+.frame .field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.frame .field > .cp{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:10.5px;font-weight:500;color:var(--gold-text);display:flex;align-items:center;gap:8px}
+.frame .field em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--hair);border-radius:4px;padding:1px 5px}
+.frame .field input,.frame .field textarea{width:100%;box-sizing:border-box;font:inherit;font-family:var(--sans,Manrope,'Helvetica Neue',Arial,sans-serif);font-size:16px;padding:11px 13px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.frame .field textarea{resize:none;height:74px;line-height:1.5}
+.frame .field input:focus,.frame .field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,180,138,.22)}
+.frame .field ::placeholder{color:#A9A193}
+.frame .field .hint{font-size:12px;line-height:1.5;color:var(--muted)}
+.social{display:flex;align-items:stretch;min-width:0;border:1px solid var(--line);border-radius:8px;background:var(--white);transition:border-color .2s,box-shadow .2s}
+.social:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,180,138,.22)}
+.nets{display:flex;align-items:center;gap:2px;flex:none;padding:4px;border-right:1px solid var(--hair)}
 .nets label{position:relative;display:block}
 .frame .nets input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer}
-.nets span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--hair-ivory);background:var(--white);color:var(--muted);transition:border-color .25s,background-color .25s,color .25s}
-.nets svg{width:16px;height:16px;display:block}
-.nets label:hover span{color:var(--ink)}
-.frame .nets input:checked + span{border-color:var(--gold);background:var(--gold-light);color:var(--ink)}
-.frame .nets input:focus-visible + span{outline:2px solid var(--gold-text);outline-offset:2px}
-.social #c-social{flex:1 1 auto}
-.stepnav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.back{font-size:12px;background:none;border:0;padding:10px 0;color:var(--muted);cursor:pointer}
+.nets span{display:grid;place-items:center;width:32px;height:32px;border-radius:6px;color:var(--muted);transition:background-color .2s,color .2s}
+.nets svg{width:15px;height:15px;display:block}
+.nets label:hover span{color:var(--ink);background:var(--mist,#FBF8F2)}
+.frame .nets input:checked + span{background:var(--gold-light);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(201,180,138,.6)}
+.frame .nets input:focus-visible + span{outline:2px solid var(--gold-text);outline-offset:1px}
+.frame .social > input{flex:1 1 auto;min-width:0;border:0;border-radius:0 8px 8px 0;box-shadow:none!important}
+.stepnav{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:4px}
+.stepnav .right{display:flex;align-items:center;gap:14px;margin-left:auto}
+.back{font-family:var(--mono);text-transform:none;letter-spacing:.02em;font-size:12px;background:none;border:0;padding:10px 0;color:var(--muted);cursor:pointer}
 .back:hover{color:var(--gold-text)}
-.go{font-size:13px;background:var(--navy);color:var(--white);border:0;padding:16px 32px;cursor:pointer;transition:background-color .25s}
+.shortcut{color:var(--muted);font-size:11px}
+.shortcut kbd{font:inherit;color:var(--gold-text);border:1px solid var(--hair);border-radius:4px;padding:1px 5px}
+.go{font-family:var(--sans,Manrope,'Helvetica Neue',Arial,sans-serif);text-transform:none;letter-spacing:.01em;font-size:14.5px;font-weight:600;background:var(--navy);color:var(--white);border:0;border-radius:8px;padding:14px 22px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:background-color .2s,transform .2s}
+.go::after{content:"→";transition:transform .25s}
 .go:hover{background:#22344D}
+.go:hover::after{transform:translateX(3px)}
+.go[disabled]::after{content:none}
 /* after sending: the frame becomes a short, calm receipt */
 .frame.sent > .eyebrow,.frame.sent > h2,.frame.sent > .progress,.frame.sent > .fine,.frame.sent > .note{display:none}
 .done{align-items:center;justify-content:center;gap:0;text-align:center;padding-block:6px}
-.done .kicker{font-size:11px;color:var(--gold-text);margin:22px 0 12px}
+.done .kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin:20px 0 14px;padding:5px 12px 5px 10px;border:1px solid var(--hair);border-radius:999px;background:var(--white)}
+.done .kicker i{width:6px;height:6px;border-radius:50%;background:#5E8C6A;box-shadow:0 0 0 3px rgba(94,140,106,.15)}
 .done .title{font-size:clamp(34px,3.8vw,46px);line-height:1.08;margin:0;text-wrap:balance}
 .done .title:focus{outline:none}
 .done .lede{font-size:16px;line-height:1.7;color:var(--body);margin:16px auto 0;max-width:38ch;text-wrap:pretty}
-.receipt{width:100%;max-width:420px;margin:30px auto 0;padding:0;border-top:1px solid var(--hair-ivory);text-align:left}
-.receipt div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:16px;align-items:baseline;padding:13px 2px;border-bottom:1px solid var(--hair-ivory)}
-.receipt dt{font-size:10.5px;color:var(--gold-text)}
+.receipt{width:100%;max-width:440px;box-sizing:border-box;margin:28px auto 0;padding:4px 18px;border:1px solid var(--hair);border-radius:10px;background:var(--white);text-align:left}
+.receipt div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--hair)}
+.receipt div:first-child{border-top:0}
+.receipt dt{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text)}
 .receipt dd{margin:0;font-size:15px;line-height:1.45;color:var(--ink);overflow-wrap:anywhere}
 .receipt dd span{color:var(--muted);margin-right:.7em}
 .wait{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:34px}
-.wait > .cp{font-size:10.5px;color:var(--muted)}
+.wait > .cp{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:var(--muted)}
 .wait .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.wait a{display:inline-flex;align-items:center;gap:9px;padding:10px 20px 10px 16px;border:1px solid var(--gold);border-radius:999px;background:var(--white);font-size:14px;color:var(--ink);transition:background-color .25s,transform .25s}
-.wait a:hover{background:var(--gold-light);color:var(--ink);transform:translateY(-1px)}
+.wait a{display:inline-flex;align-items:center;gap:9px;padding:10px 16px 10px 14px;border:1px solid var(--line,#DDD6C8);border-radius:8px;background:var(--white);font-size:14px;font-weight:500;color:var(--ink);transition:border-color .2s,background-color .2s,transform .2s}
+.wait a::after{content:"↗";font-family:var(--mono);font-size:11px;color:var(--gold-text)}
+.wait a:hover{border-color:var(--gold);background:var(--mist,#FBF8F2);color:var(--ink);transform:translateY(-1px)}
 .wait svg{width:16px;height:16px;flex:none}
 .done #again{margin-top:22px}
 /* the receipt settles in after the tick has drawn */
@@ -187,7 +207,7 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .tick path{stroke-dasharray:24;stroke-dashoffset:24}
 .done.on .tick circle{transition:stroke-dashoffset .9s cubic-bezier(.45,0,.2,1) .3s;stroke-dashoffset:0}
 .done.on .tick path{transition:stroke-dashoffset .5s ease-out 1.05s;stroke-dashoffset:0}
-.frame .field input[aria-invalid="true"]{border-bottom-color:var(--err)}
+.frame .field input[aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 3px rgba(158,63,44,.12)}
 .frame .note.err{color:var(--err)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .go[disabled]{opacity:.75;cursor:default}
@@ -216,20 +236,52 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
 }
 @media (max-width:600px){.choices,.pair{grid-template-columns:minmax(0,1fr)}.pair{gap:16px}.step{gap:16px}.choice{padding:12px 14px}.go{padding:15px 28px}.frame{padding:36px 20px 28px}.frame h2{margin-bottom:16px}.progress{margin-bottom:22px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* HEADINGS · Cormorant SC capitals, closer to the logo. Text stays Manrope. */
+.h-sc .band h2,.h-sc .biz h3,.h-sc .letter h2,.h-sc .feat h3,.h-sc .side h3,.h-sc .frame h2,.h-sc .done .title{font-family:'Cormorant SC',Georgia,serif;font-weight:500;text-transform:uppercase}
+.h-sc .band h2{font-size:clamp(38px,5vw,72px);line-height:1.06;letter-spacing:.04em;max-width:16ch}
+.h-sc .biz h3{font-size:clamp(34px,3.4vw,48px);line-height:1.06;letter-spacing:.05em}
+.h-sc .letter h2{font-size:clamp(38px,4.2vw,60px);letter-spacing:.05em}
+.h-sc .feat h3{font-size:clamp(28px,2.8vw,38px);line-height:1.14;letter-spacing:.03em}
+.h-sc .side h3{font-size:23px;line-height:1.2;letter-spacing:.03em}
+.h-sc .frame h2{font-size:clamp(26px,2.7vw,34px);letter-spacing:.05em}
+.h-sc .done .title{font-size:clamp(28px,3vw,38px);letter-spacing:.04em}
+
+/* MODERN TOUCH · a small technical layer on the same design: a mono face for data (time, coordinates, counts, keys),
+   a live Phuket clock, and a faint gold grid on the navy bands, like a blueprint. */
+:root{--mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.02em;font-variant-numeric:tabular-nums;text-transform:none}
+.geo{display:none}
+.t-mod .geo{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.geo i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(201,180,138,.6);animation:live 2.4s ease-out infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(201,180,138,.55)}70%{box-shadow:0 0 0 7px rgba(201,180,138,0)}100%{box-shadow:0 0 0 0 rgba(201,180,138,0)}}
+/* the navy bands get depth: a soft light from above, and a slow field of gold contour lines, like currents on water */
+.navy-grid{position:relative}
+.navy-grid > .field{display:none;position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%)}
+.t-mod .navy-grid > .field{display:block}
+.t-mod .navy-grid{background:radial-gradient(ellipse 90% 60% at 50% 0%,#22364F 0%,rgba(34,54,79,0) 70%),var(--navy)}
+.navy-grid > .wrap{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.geo i{animation:none}}
+
+.hero header .where{display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px}
+.hero header .where .cp{font-size:12px;color:var(--muted)}
+.t-mod .progress .count{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:none}
+
 </style>
 </head>
 <body>
 
 <section id="top" class="hero">
   <header class="wrap">
-    <span class="cp">Phuket · Thailand</span>
+    <div class="where"><span class="cp">Phuket · Thailand</span><span class="geo mono" aria-label="Phuket local time"><i aria-hidden="true"></i>7.88°N 98.39°E · <time class="clock">--:--</time> ICT</span></div>
     <nav class="cp"><a href="#work">What we do</a><a href="/about/">About</a><a href="#letter">The Letter</a><a href="#contact">Contact</a></nav>
   </header>
   <img class="logo" id="logo" src="/mw-logo-spaced.png" width="1200" height="392" alt="Mysterious Water">
   <h1 class="cp caption" id="caption">Quiet money moves like water</h1>
 </section>
 
-<section id="work" class="band">
+<section id="work" class="band navy-grid">
   <div class="joint" aria-hidden="true"><span class="ink"></span><span class="head"></span></div>
   <div class="wrap lead">
     <p class="cp eyebrow" data-rise>Trading · Real estate</p>
@@ -263,20 +315,15 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   <div class="wrap">
     <div class="head-block" data-rise>
       <h2 class="serif">The Letter</h2>
-      <p class="sub">Strategy, AI agents and property, written for anyone starting small. The first letters are on the way.</p>
+      <p class="sub">Strategy, AI agents and property, written for anyone starting small.</p>
     </div>
     <div class="letters">
-      <article class="feat" data-rise>
-        <span class="cp">First letter · AI agents</span>
-        <h3 class="serif">How we taught an AI team our rules</h3>
-        <p>Alfred trades gold. Fox trades Bitcoin. What it took to turn a written strategy into agents that follow it, and what they still get wrong.</p>
-        <a class="cp" href="https://instagram.com/thetunniverse" target="_blank" rel="noopener">Coming soon · Follow to read it first →</a>
-      </article>
-      <div class="side" aria-label="Coming next">
-        <article data-rise><span class="cp">Trading</span><h3 class="serif">Never take the fifth trade</h3></article>
-        <article data-rise><span class="cp">Markets</span><h3 class="serif">From chips to software: reading the layers</h3></article>
-        <article data-rise><span class="cp">Real estate</span><h3 class="serif">What a good long-term tenant is worth</h3></article>
-      </div>
+      <a class="feat" href="/letters/nobody-photographs-the-concrete/" data-rise>
+        <span class="mono meta"><b>Letter No. 1</b> · Crypto and AI</span>
+        <h3 class="serif">Nobody Photographs the Concrete</h3>
+        <p>Sentiment is at extreme fear. The foundations are still being poured. A letter on crypto, AI, and what lasts after the noise.</p>
+        <span class="foot"><span class="mono">26 Nov 2026 · 7 min read · 3 charts · 13 sources</span><span class="read">Read the letter <i aria-hidden="true">→</i></span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -306,6 +353,7 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
             <button type="button" class="choice" data-key="c" data-topic="Trading and AI" aria-pressed="false"><b>C</b>Trading and AI agents</button>
             <button type="button" class="choice" data-key="d" data-topic="Proposal or press" aria-pressed="false"><b>D</b>A proposal, press or other</button>
           </div>
+          <p class="keys mono">Tap an answer, or press <kbd>A</kbd>–<kbd>D</kbd></p>
         </div>
         <div class="step" data-step="1">
           <p class="q">How can we reach you?</p>
@@ -336,11 +384,11 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
             <div class="field wide"><label class="cp" for="c-msg">Message <em>optional</em></label><textarea id="c-msg" name="message" placeholder="Anything we should know before we talk?"></textarea></div>
           </div>
           <input class="hp" id="c-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="stepnav"><button type="button" class="cp back" data-back>← Back</button><button type="submit" class="cp go" id="sendBtn">Send</button></div>
+          <div class="stepnav"><button type="button" class="back" data-back>← Back</button><span class="right"><span class="shortcut mono" id="shortcut" hidden>or <kbd>Ctrl</kbd> <kbd>Enter</kbd></span><button type="submit" class="go" id="sendBtn">Send</button></span></div>
         </div>
         <div class="step done" data-step="2">
           <span class="tick" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.5"/><path d="M12.5 20.5l5 5 10-11"/></svg></span>
-          <p class="cp kicker">Message received</p>
+          <p class="mono kicker"><i aria-hidden="true"></i>Message received · <time id="sentAt">--:--</time> ICT</p>
           <h3 class="serif title" id="doneTitle" tabindex="-1">Thank you.</h3>
           <p class="lede" id="doneText"></p>
           <dl class="receipt" id="receipt"></dl>
@@ -351,7 +399,7 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
               <a href="https://x.com/thetunniverse" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>X</a>
             </div>
           </div>
-          <button type="button" class="cp back" id="again">Send another message</button>
+          <button type="button" class="back" id="again">Send another message</button>
         </div>
       </form>
       <p class="note" id="note" role="status"></p>
@@ -365,6 +413,99 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   <small>The home of every Mysterious Water project, and what we learn along the way. Our trading and part of our real estate run on our own capital. Nothing here is investment advice.</small>
 </footer>
 
+<script>
+// live Phuket time for the header (UTC+7)
+(() => {
+  const f = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', hour12: false });
+  const t = () => document.querySelectorAll('.clock').forEach(el => el.textContent = f.format(new Date()));
+  t(); setInterval(t, 15000);
+})();
+</script>
+<script>
+/* Liquid field: gold contour lines over the navy bands, seen at a low angle so they recede into depth.
+   Lines come from a slowly flowing height field (domain-warped waves), drawn with marching squares.
+   Runs only while a band is on screen, at ~30 fps; with reduced motion it draws one still frame. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bands = [...document.querySelectorAll('.navy-grid')];
+  const LEVELS = [-1.5, -1.05, -0.6, -0.15, 0.3, 0.75, 1.2, 1.65];
+  const field = (x, y, t) =>
+    Math.sin(x * 0.9 + Math.sin(y * 0.55 + t * 0.30) * 1.5 + t * 0.20) +
+    Math.sin(y * 1.05 + Math.sin(x * 0.45 - t * 0.24) * 1.3 - t * 0.14) * 0.8 +
+    Math.sin((x + y) * 0.38 + t * 0.09) * 0.55;
+  const items = bands.map(band => {
+    const c = document.createElement('canvas');
+    c.className = 'field'; c.setAttribute('aria-hidden', 'true');
+    band.prepend(c);
+    return { band, c, ctx: c.getContext('2d'), w: 0, h: 0, on: false };
+  });
+  function size(it) {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    it.w = it.band.clientWidth; it.h = it.band.clientHeight;
+    it.c.width = Math.round(it.w * dpr); it.c.height = Math.round(it.h * dpr);
+    it.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function draw(it, t) {
+    const { ctx, w, h } = it;
+    if (!w || !h) return;
+    ctx.clearRect(0, 0, w, h);
+    const cell = w < 700 ? 14 : 12, cols = Math.ceil(w / cell) + 1, rows = Math.ceil(h / cell) + 1;
+    const v = new Float32Array(cols * rows);
+    // perspective: rows near the top are far away, so the field is sampled more densely there
+    for (let j = 0; j < rows; j++) {
+      const sy = j / (rows - 1), depth = 1 / (sy * 1.25 + 0.32);
+      const wy = depth * 2.2;
+      for (let i = 0; i < cols; i++) {
+        const sx = (i * cell - w / 2) / 520;
+        v[j * cols + i] = field(sx * depth * 1.6, wy, t);
+      }
+    }
+    LEVELS.forEach((L, k) => {
+      ctx.beginPath();
+      for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols - 1; i++) {
+        const a = v[j * cols + i], b = v[j * cols + i + 1], c2 = v[(j + 1) * cols + i + 1], d = v[(j + 1) * cols + i];
+        const n = (a > L) | ((b > L) << 1) | ((c2 > L) << 2) | ((d > L) << 3);
+        if (n === 0 || n === 15) continue;
+        const x = i * cell, y = j * cell;
+        const top = [x + cell * (L - a) / (b - a), y], right = [x + cell, y + cell * (L - b) / (c2 - b)];
+        const bot = [x + cell * (L - d) / (c2 - d), y + cell], left = [x, y + cell * (L - a) / (d - a)];
+        const seg = (p, q) => { ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); };
+        switch (n) {
+          case 1: case 14: seg(left, top); break;
+          case 2: case 13: seg(top, right); break;
+          case 3: case 12: seg(left, right); break;
+          case 4: case 11: seg(right, bot); break;
+          case 6: case 9: seg(top, bot); break;
+          case 7: case 8: seg(left, bot); break;
+          case 5: seg(left, top); seg(right, bot); break;
+          case 10: seg(top, right); seg(left, bot); break;
+        }
+      }
+      // one line carries a brighter current; the rest stay faint
+      ctx.strokeStyle = k === 4 ? 'rgba(232,214,172,.30)' : 'rgba(217,196,154,.13)';
+      ctx.lineWidth = k === 4 ? 1.1 : 0.8;
+      ctx.stroke();
+    });
+  }
+  const visible = it => it.on && it.c.offsetParent !== null;
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { const it = items.find(x => x.band === e.target); it.on = e.isIntersecting; }));
+    items.forEach(it => io.observe(it.band));
+  } else items.forEach(it => it.on = true);
+  const t0 = performance.now(); let last = 0;
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (now - last < 33) return; last = now;
+    const t = (now - t0) / 1000 * 0.35;
+    items.forEach(it => { if (visible(it)) draw(it, t); });
+  }
+  const resize = () => items.forEach(it => { size(it); draw(it, reduce ? 4 : (performance.now() - t0) / 1000 * 0.35); });
+  addEventListener('resize', resize);
+  if ('ResizeObserver' in window) items.forEach(it => new ResizeObserver(() => { size(it); draw(it, 4); }).observe(it.band));
+  resize();
+  if (!reduce) requestAnimationFrame(loop);
+})();
+</script>
 <div class="follow" id="follow">
   <span class="cp">Follow</span>
   <a class="ico" href="https://instagram.com/thetunniverse" target="_blank" rel="noopener" aria-label="Instagram @thetunniverse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
@@ -480,11 +621,12 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   const topicText = t => ((choices.find(c => c.dataset.topic === t) || {}).textContent || '').replace(/^[A-D]/, '');
   function row(label, value, extra) {
     const d = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
-    dt.className = 'cp'; dt.textContent = label; dd.textContent = value;
+    dt.className = 'mono'; dt.textContent = label; dd.textContent = value;
     if (extra) { const sp = document.createElement('span'); sp.textContent = extra; dd.prepend(sp); }
     d.append(dt, dd); return d;
   }
   function sent(v) {
+    $('#sentAt').textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
     const first = v.name.split(/\s+/)[0];
     $('#doneTitle').textContent = `Thank you, ${first}.`;
     $('#doneText').textContent = `We read every message ourselves and will reply soon ${v.chat ? 'on ' + v.app : 'by email'}${v.social ? ', and look out for you on ' + v.net : ''}.`;
@@ -515,7 +657,11 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     filter.setAttribute('x', -40); filter.setAttribute('y', -40);
     filter.setAttribute('width', W + 80); filter.setAttribute('height', H + 80);
-    const m = W / 2, d = { l: `M${m} 0 H0 V${H} H${m}`, r: `M${m} 0 H${W} V${H} H${m}` };
+    // a rounded rectangle, drawn as two halves from the top centre so the comets meet at the bottom
+    const m = W / 2, r = Math.min(18, W / 4, H / 4), d = {
+      l: `M${m} 0 H${r} A${r} ${r} 0 0 0 0 ${r} V${H - r} A${r} ${r} 0 0 0 ${r} ${H} H${m}`,
+      r: `M${m} 0 H${W - r} A${r} ${r} 0 0 1 ${W} ${r} V${H - r} A${r} ${r} 0 0 1 ${W - r} ${H} H${m}`
+    };
     [...lines, ...glows].forEach(p => p.setAttribute('d', d[p.dataset.side]));
     L = lines[0].getTotalLength();
     lines.forEach(p => p.style.strokeDasharray = `${L} ${L}`);
@@ -597,6 +743,15 @@ footer small a{color:var(--gold-text);border-bottom:1px solid var(--gold)}
   if (reduce) { joints.forEach(j => apply(j, 1)); }
   else { for (const [el, t] of targets()) { shown.set(el, t); apply(el, t); } }
   onScroll();
+  // send with Cmd/Ctrl + Enter from the details step (shown only on devices with a keyboard)
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const mac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+    $('#shortcut').innerHTML = `or <kbd>${mac ? '⌘' : 'Ctrl'}</kbd> <kbd>Enter</kbd>`;
+    $('#shortcut').hidden = false;
+  }
+  addEventListener('keydown', e => {
+    if (cur === 1 && e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : $('#sendBtn').click(); }
+  });
   // links like /?topic=proposal#contact (from the About page) open the form on that topic
   if (new URLSearchParams(location.search).get('topic') === 'proposal') choices.find(c => c.dataset.key === 'd').click();
   // see the thank-you screen without sending: /?sent=preview#contact
